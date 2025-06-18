@@ -1,6 +1,6 @@
 let handler = async (m, { isPrems, conn }) => {
 m.react('💱')
-let img = 'https://cdn.russellxz.click/896b4f6c.PNG' 
+let img = 'https://cdn.russellxz.click/25d97df3.png' 
 let texto = `
 🪙 𝐌 𝐔 𝐋 𝐓 𝐈 - 𝐌 𝐄 𝐍 𝐔́ 
 
@@ -365,4 +365,3 @@ global.db.data.users[m.sender].lastcofre = new Date * 1
 
 handler.command = ['menu', 'menú', 'multimenu', 'help', 'comandos', 'ayuda'] 
 export default handler
-
