@@ -9,8 +9,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || q.mediaType || ''
   if (/video|audio/.test(mime)) {
-  let bufAlexn = await q.download()
-  let { status, metadata } = await acr.identify(bufAlexn)
+  let Buffer = await q.download()
+  let { status, metadata } = await acr.identify(Buffer)
   if (status.code !== 0) throw status.msg 
   let { title, artists, album, genres, release_date } = metadata.music[0]
   let txt = '🚩 *Whatmusic Tools* \n'

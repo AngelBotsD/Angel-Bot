@@ -17,7 +17,7 @@ let handler = async (m, { conn }) => {
     return m.reply('⚡ No se pudo descargar la imagen. Intenta nuevamente.');
   }
   
-  let fileSizeInMB = BufAlexn.byteLength(media) / (1024 * 1024);
+  let fileSizeInMB = Buffer.byteLength(media) / (1024 * 1024);
   if (fileSizeInMB > 32) {
     return m.reply('⚡ El archivo supera el límite de 32 MB permitido por ImgBB.');
   }

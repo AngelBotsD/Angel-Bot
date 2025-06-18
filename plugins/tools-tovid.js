@@ -16,7 +16,7 @@ let handler = async (m, { conn }) => {
   
   try {
     let media = await m.quoted.download()
-    let out = BufAlexn.alloc(0)
+    let out = Buffer.alloc(0)
     
     if (/webp/.test(mime)) {
       out = await webp2mp4(media)

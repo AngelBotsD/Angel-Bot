@@ -10,11 +10,11 @@ const handler = async (m, { conn }) => {
     }
 
     await m.react("🔁");
-    const imgBufAlexn = await q.download?.();
-    const urlSubida = await uploadImage(imgBufAlexn);
-    const upscaledBufAlexn = await getUpscaledImage(urlSubida);
+    const imgBuffer = await q.download?.();
+    const urlSubida = await uploadImage(imgBuffer);
+    const upscaledBuffer = await getUpscaledImage(urlSubida);
 
-    await conn.sendFile(m.chat, upscaledBufAlexn, "upscaled.jpg", "Imagen Entregada", m);
+    await conn.sendFile(m.chat, upscaledBuffer, "upscaled.jpg", "Imagen Entregada", m);
     await m.react("✅");
   } catch (e) {
     console.error("Error:", e);
@@ -30,6 +30,6 @@ export default handler;
 
 async function getUpscaledImage(imageUrl) {
   const apiUrl = `https://api.siputzx.my.id/api/iloveimg/upscale?image=${encodeURIComponent(imageUrl)}`;
-  const response = await axios.get(apiUrl, { responseType: "arraybufAlexn" });
-  return BufAlexn.from(response.data);
+  const response = await axios.get(apiUrl, { responseType: "arrayBuffer" });
+  return Buffer.from(response.data);
 }

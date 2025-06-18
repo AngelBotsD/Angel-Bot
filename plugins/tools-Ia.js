@@ -8,12 +8,12 @@ if (isQuotedImage) {
 const q = m.quoted
 const img = await q.download?.()
 if (!img) {
-console.error('🚫 Error: No image bufAlexn available')
+console.error('🚫 Error: No image Buffer available')
 return conn.reply(m.chat, '🚫 Error: No se pudo descargar la imagen.', m, fake)}
 const content = '🍁 ¿Qué se observa en la imagen?'
 try {
 
-const imageAnalysis = await fetchImageBufAlexn(content, img)
+const imageAnalysis = await fetchImageBuffer(content, img)
 
 const query = '💫 Descríbeme la imagen y detalla por qué actúan así. También dime quién eres'
 
@@ -59,7 +59,7 @@ export default handler
 
 // Función para enviar una imagen y obtener el análisis
 
-async function fetchImageBufAlexn(content, imageBufAlexn) {
+async function fetchImageBuffer(content, imageBuffer) {
 
 try {
 
@@ -67,7 +67,7 @@ const response = await axios.post('https://Luminai.my.id', {
 
 content: content,
 
-imageBufAlexn: imageBufAlexn 
+imageBuffer: imageBuffer 
 
 }, {
 

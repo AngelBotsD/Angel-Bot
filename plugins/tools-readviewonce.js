@@ -6,14 +6,14 @@ if (m.quoted.mtype !== 'viewOnceMessageV2') return conn.reply(m.chat, `👀 Resp
 let msg = m.quoted.message
 let type = Object.keys(msg)[0]
 let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
-let bufAlexn = BufAlexn.from([])
+let Buffer = Buffer.from([])
 for await (const chunk of media) {
-bufAlexn = BufAlexn.concat([bufAlexn, chunk])
+Buffer = Buffer.concat([Buffer, chunk])
 }
 if (/video/.test(type)) {
-return conn.sendFile(m.chat, bufAlexn, 'media.mp4', msg[type].caption || '', m)
+return conn.sendFile(m.chat, Buffer, 'media.mp4', msg[type].caption || '', m)
 } else if (/image/.test(type)) {
-return conn.sendFile(m.chat, bufAlexn, 'media.jpg', msg[type].caption || '', m)
+return conn.sendFile(m.chat, Buffer, 'media.jpg', msg[type].caption || '', m)
 }}
 handler.help = ['ver']
 handler.tags = ['tools']

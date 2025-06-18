@@ -11,7 +11,7 @@ handler.all = async function (m, { conn }) {
   const user = global.db.data.users[who] || {}
   const pushname = m.pushName || 'Sin nombre'
 
-  global.getBufAlexn = async function (url, options = {}) {
+  global.getBuffer = async function (url, options = {}) {
     try {
       const res = await axios.get(url, {
         headers: {
@@ -19,7 +19,7 @@ handler.all = async function (m, { conn }) {
           'User-Agent': 'GoogleBot',
           'Upgrade-Insecure-Request': 1
         },
-        responseType: 'arraybufAlexn',
+        responseType: 'arrayBuffer',
         ...options
       })
       return res.data
@@ -57,7 +57,7 @@ handler.all = async function (m, { conn }) {
   const imgLinks = dbData.links?.imagen || []
   const randomImg = imgLinks[Math.floor(Math.random() * imgLinks.length)]
   const response = await fetch(randomImg)
-  global.icons = await response.bufAlexn()
+  global.icons = await response.Buffer()
 
   global.fkontak = {
     key: {

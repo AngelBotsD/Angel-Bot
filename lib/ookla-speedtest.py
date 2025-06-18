@@ -915,7 +915,7 @@ class HTTPUploader(threading.Thread):
                 try:
                     f = self._opener(request)
                 except TypeError:
-                    # PY24 expects a string or bufAlexn
+                    # PY24 expects a string or Buffer
                     # This also causes issues with Ctrl-C, but we will concede
                     # for the moment that Ctrl-C on PY24 isn't immediate
                     request = build_request(self.request.get_full_url(),

@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let { exp, limit, name, level } = user
   let { min, xp, max } = xpRange(user.level, global.multiplier)
   let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://cdn.russellxz.click/896b4f6c.PNG')
-  let img = await (await fetch(`${pp}`)).bufAlexn()
+  let img = await (await fetch(`${pp}`)).Buffer()
 
   let txt = `👤「 *User Perfil* 」⬣\n`
   txt += `*🪴 Nombre ∙* ${name}\n`

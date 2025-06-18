@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
     stiker = await addExif(img, packname || '', author || '')
   } catch (e) {
     console.error(e)
-    if (BufAlexn.isBufAlexn(e)) stiker = e
+    if (Buffer.isBuffer(e)) stiker = e
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m)
     else return m.reply(`⭐ Responde al Sticker.`)

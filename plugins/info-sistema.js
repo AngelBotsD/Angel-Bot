@@ -48,7 +48,7 @@ const handler = async (m, { conn }) => {
 → Heap Total: ${formatBytes(nodeUsage.heapTotal)}
 → Heap Usado: ${formatBytes(nodeUsage.heapUsed)}
 → Externa: ${formatBytes(nodeUsage.external)}
-→ Arreglos: ${formatBytes(nodeUsage.arrayBufAlexns)}
+→ Arreglos: ${formatBytes(nodeUsage.arrayBuffers)}
 ${diskSpace ? `
 
 *Espacio en Disco:*
