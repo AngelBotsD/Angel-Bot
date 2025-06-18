@@ -19,7 +19,7 @@ handler.all = async function (m, { conn }) {
           'User-Agent': 'GoogleBot',
           'Upgrade-Insecure-Request': 1
         },
-        responseType: 'arrayBuffer',
+        responseType: 'arraybuffer',
         ...options
       })
       return res.data
@@ -29,9 +29,9 @@ handler.all = async function (m, { conn }) {
   }
 
   // Datos básicos
-  global.creador = 'Wa.me/528125788206'
-  global.asistencia = 'https://wa.me/528125788206'
-  global.namechannel = 'BOSSBOT'
+  global.creador = 'Wa.me/584122216538'
+  global.asistencia = 'https://wa.me/qr/OEGLZUMXONHDL1'
+  global.namechannel = '𝙕𝙚𝙧𝙬𝙖𝙮𝘽𝙤𝙩'
 
   global.rwait = '🕒'
   global.done = '✅'
@@ -44,10 +44,10 @@ handler.all = async function (m, { conn }) {
 
   // Redes sociales aleatorias
   const redes = [
-    'https://chat.whatsapp.com/LbdiPrImAbI67gaA5Dyf3j',
-    'https://www.tiktok.com/@alexn',
+    'https://whatsapp.com/channel/0029Vb47YlCLdQemgIavqj0v',
+    'https://www.tiktok.com/@sisked1',
     'https://www.instagram.com/sisked_1',
-    'alexnventas@gmail.com'
+    'anuarmazenett@gmail.com'
   ]
   global.redes = redes[Math.floor(Math.random() * redes.length)]
 
@@ -57,7 +57,7 @@ handler.all = async function (m, { conn }) {
   const imgLinks = dbData.links?.imagen || []
   const randomImg = imgLinks[Math.floor(Math.random() * imgLinks.length)]
   const response = await fetch(randomImg)
-  global.icons = await response.Buffer()
+  global.icons = await response.buffer()
 
   global.fkontak = {
     key: {
@@ -86,7 +86,7 @@ handler.all = async function (m, { conn }) {
   }
 
   const iconos = [
-    'https://cdn.russellxz.click/896b4f6c.PNG'
+    'https://cdn.russellxz.click/25d97df3.png'
   ]
   global.icono = iconos[Math.floor(Math.random() * iconos.length)]
 
@@ -100,8 +100,8 @@ handler.all = async function (m, { conn }) {
       },
       externalAdReply: {
         showAdAttribution: true,
-        title: global.botname || 'BOSS Bot',
-        body: global.dev || 'Alexn Dev',
+        title: global.botname || 'Sisked Bot',
+        body: global.dev || 'Sisked Dev',
         thumbnailUrl: global.icono,
         sourceUrl: global.redes,
         mediaType: 1,

@@ -6,7 +6,7 @@ let handler = async (m, { groupMetadata, text, conn }) => {
   let participantes = groupMetadata.participants.map(p => p.id)
   let ganador = participantes.getRandom()
 
-  let mensaje = `🏆 *${'@' + ganador.split('@')[0]}* ganó el sorteo: ${text} ☁️\nBOSSbot 🔥.\n`
+  let mensaje = `🏆 *${'@' + ganador.split('@')[0]}* ganó el sorteo: ${text} ☁️\nZerwaybot 🔥.\n`
 
   let textoAnimado = ''
   for (let i = 0; i < mensaje.length; i++) {

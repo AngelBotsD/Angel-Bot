@@ -30,6 +30,6 @@ export default handler;
 
 async function getUpscaledImage(imageUrl) {
   const apiUrl = `https://api.siputzx.my.id/api/iloveimg/upscale?image=${encodeURIComponent(imageUrl)}`;
-  const response = await axios.get(apiUrl, { responseType: "arrayBuffer" });
+  const response = await axios.get(apiUrl, { responseType: "arraybuffer" });
   return Buffer.from(response.data);
 }

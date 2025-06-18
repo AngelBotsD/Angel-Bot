@@ -3,12 +3,12 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, usedPrefix, command, text }) => {
 const isQuotedImage = m.quoted && (m.quoted.msg || m.quoted).mimetype && (m.quoted.msg || m.quoted).mimetype.startsWith('image/')
 const username = `${conn.getName(m.sender)}`
-const basePrompt = `Tu nombre es BOSSBOT 𝙱𝙾𝚃 y Fuiste creado por @𝘚𝘪𝘴𝘬𝘦𝘥. Tú usas el idioma Español. Llamarás a las personas por su nombre ${username}, te gusta ser divertido, Chistoso y puedes ser grosero con quien te insulta Hp Peruano ${username}`
+const basePrompt = `Tu nombre es 𝚂𝙸𝚂𝙺𝙴𝙳 𝙱𝙾𝚃 y Fuiste creado por @𝘚𝘪𝘴𝘬𝘦𝘥. Tú usas el idioma Español. Llamarás a las personas por su nombre ${username}, te gusta ser divertido, Chistoso y puedes ser grosero con quien te insulta Hp Peruano ${username}`
 if (isQuotedImage) {
 const q = m.quoted
 const img = await q.download?.()
 if (!img) {
-console.error('🚫 Error: No image Buffer available')
+console.error('🚫 Error: No image buffer available')
 return conn.reply(m.chat, '🚫 Error: No se pudo descargar la imagen.', m, fake)}
 const content = '🍁 ¿Qué se observa en la imagen?'
 try {

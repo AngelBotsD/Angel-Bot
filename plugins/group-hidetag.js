@@ -4,7 +4,7 @@ import * as fs from 'fs';
 const handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
   try {
     const users = participants.map((u) => conn.decodeJid(u.id));
-    const watermark = '\n\n> BOSS-bot🔥';
+    const watermark = '\n\n> Zerway-bot🔥';
 
     const q = m.quoted ? m.quoted : m || m.text || m.sender;
     const c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender;
@@ -34,7 +34,7 @@ const handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     const quoted = m.quoted ? m.quoted : m;
     const mime = (quoted.msg || quoted).mimetype || '';
     const isMedia = /image|video|sticker|audio/.test(mime);
-    const watermark = '\n\n> BOSS-bot🔥';
+    const watermark = '\n\n> Zerway-bot🔥';
 
     if (isMedia) {
       const mediax = await quoted.download?.();

@@ -24,7 +24,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         txt += `*📅 𝙿𝚞𝚋𝚕𝚒𝚌𝚊𝚍𝚘* : ${published}\n`
         txt += `*👍🏻 𝙻𝚒𝚔𝚎𝚜* : ${likes}\n`
         txt += `*👀 𝚅𝚒𝚜𝚒𝚝𝚊𝚜* : ${views}\n`
-        txt += `\n> BOSS 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 📈`
+        txt += `\n> 𝚂𝙸𝚂𝙺𝙴𝙳 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 📈`
 
         await conn.sendMessage(m.chat, { video: { url: dl_url }, caption: txt }, { quoted: m });
     } catch {
@@ -39,7 +39,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                 txt += `*📅 𝙿𝚞𝚋𝚕𝚒𝚌𝚊𝚍𝚘* : ${published}\n`
                 txt += `*👍🏻 𝙻𝚒𝚔𝚎𝚜* : ${likes}\n`
                 txt += `*👀 𝚅𝚒𝚜𝚒𝚝𝚊𝚜* : ${views}\n`
-                txt += `\n> BOSSBOT 🔥`
+                txt += `\n> 𝐙𝐞𝐫𝐰𝐚𝐲𝐛𝐨𝐭 🔥`
 
                 await conn.sendMessage(m.chat, { video: { url: video }, caption: txt }, { quoted: m })
             }
@@ -58,7 +58,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                     txt += `*📅 𝙿𝚞𝚋𝚕𝚒𝚌𝚊𝚍𝚘* : ${published}\n`
                     txt += `*👍🏻 𝙻𝚒𝚔𝚎𝚜* : ${likes}\n`
                     txt += `*👀 𝚅𝚒𝚜𝚒𝚝𝚊𝚜* : ${views}\n`
-                    txt += `\n> BOSS 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 📈`
+                    txt += `\n> 𝚂𝙸𝚂𝙺𝙴𝙳 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 📈`
 
                     await conn.sendMessage(m.chat, { video: { url: meta.media[0].org }, caption: txt }, { quoted: m })
                 }

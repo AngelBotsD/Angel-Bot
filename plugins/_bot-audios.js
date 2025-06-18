@@ -26,7 +26,7 @@ let handler = async (m, { conn }) => {
             await conn.sendFile(m.chat, 'https://qu.ax/Dwqp.mp3', `${text}.mp3`, null, m, true, { type: 'audioMessage' });
             break;
 
-        case 'Alexniado':
+        case 'feriado':
             conn.sendPresenceUpdate('recording', m.chat);
             await conn.sendFile(m.chat, 'https://qu.ax/mFCT.mp3', `${text}.mp3`, null, m, true, { type: 'audioMessage' });
             break;
@@ -267,7 +267,7 @@ let handler = async (m, { conn }) => {
   }
 };
 
-handler.customPrefix = /^(tarado|tka|hey|freefire|Alexniado|aguanta|nadie te pregunto|niconico|no chupala|no me hables|no me hagas usar esto|omg|contexto|pero esto|pikachu|pokemon|verdad que te engañe|vivan los novios|una pregunta|hermoso negro|buen dia grupo|calla fan de bts|cambiate a movistar|corte corte|el toxico|elmo sabe donde vives|en caso de una investigacion|no estes tite|las reglas del grupo|me anda buscando anonymous|motivacion|muchachos escucharon|nico nico|no rompas mas|potasio|que tal grupo|se estan riendo de mi|su nivel de pendejo|tal vez|te gusta el pepino|tengo los calzones|entrada|bien pensado woody|esto va a ser epico papus|fino señores|me voy|homero chino|jesucristo|laoracion|me pican los cocos)$/i;
+handler.customPrefix = /^(tarado|tka|hey|freefire|feriado|aguanta|nadie te pregunto|niconico|no chupala|no me hables|no me hagas usar esto|omg|contexto|pero esto|pikachu|pokemon|verdad que te engañe|vivan los novios|una pregunta|hermoso negro|buen dia grupo|calla fan de bts|cambiate a movistar|corte corte|el toxico|elmo sabe donde vives|en caso de una investigacion|no estes tite|las reglas del grupo|me anda buscando anonymous|motivacion|muchachos escucharon|nico nico|no rompas mas|potasio|que tal grupo|se estan riendo de mi|su nivel de pendejo|tal vez|te gusta el pepino|tengo los calzones|entrada|bien pensado woody|esto va a ser epico papus|fino señores|me voy|homero chino|jesucristo|laoracion|me pican los cocos)$/i;
 handler.command = new RegExp;
 
 export default handler;

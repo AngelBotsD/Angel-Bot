@@ -365,3 +365,4 @@ global.db.data.users[m.sender].lastcofre = new Date * 1
 
 handler.command = ['menu', 'menú', 'multimenu', 'help', 'comandos', 'ayuda'] 
 export default handler
+

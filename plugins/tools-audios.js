@@ -2,7 +2,7 @@ import gtts from 'node-gtts'
 import { readFileSync, unlinkSync } from 'fs'
 import { join } from 'path'
 
-const defaultLang = 'es';  // Puedes cambiar a 'es-CO', 'es-MX', etc., para diAlexnentes voces.
+const defaultLang = 'es';  // Puedes cambiar a 'es-CO', 'es-MX', etc., para diferentes voces.
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     let lang = args[0];
     let text = args.slice(1).join(' ');

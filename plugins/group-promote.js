@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, participants }) => {
   if (!text && !m.quoted && (!m.mentionedJid || !m.mentionedJid.length)) {
     return conn.reply(
       m.chat,
-      '🚩 Use el comandó correctamente\n\n`Ejemplo :`\n\n> . promote @BOSSBOT',
+      '🚩 Use el comandó correctamente\n\n`Ejemplo :`\n\n> . promote @𝐙𝐞𝐫𝐰𝐚𝐲𝐛𝐨𝐭',
       m
     );
   }

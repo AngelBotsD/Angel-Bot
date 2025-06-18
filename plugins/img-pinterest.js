@@ -9,7 +9,7 @@ let json = api.data
 let data = json.data[Math.floor(Math.random() * json.data.length)]
 
 let { pin, created_at, images_url, grid_title } = data
-let HS = `- *Titulo :* ${grid_title}\nBOSSBOT - 𝙱𝙾𝚃 📈`
+let HS = `- *Titulo :* ${grid_title}\n𝚂𝙸𝚂𝙺𝙴𝙳 - 𝙱𝙾𝚃 📈`
 await conn.sendMessage(m.chat, { image: { url: images_url }, caption: HS }, { quoted: m })
 
 } catch (error) {

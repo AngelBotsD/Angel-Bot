@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
     else who = m.chat
     if (!who) throw '🚩 Menciona al usuario con *@user.*'
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw '🚩 Ingrese la cantidad de *🍬 Dulces* que quiere transAlexnir.'
+    if (!txt) throw '🚩 Ingrese la cantidad de *🍬 Dulces* que quiere transferir.'
     if (isNaN(txt)) throw 'Sólo números.'
     let poin = parseInt(txt)
     let limit = poin

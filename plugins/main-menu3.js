@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-let img = 'https://cdn.russellxz.click/896b4f6c.PNG' 
+let img = 'https://cdn.russellxz.click/25d97df3.png' 
 let texto = `
 ╔═════════════════╗
 ┇•°「 *𝘓𝘰𝘨𝘰 - 𝘮𝘢𝘬𝘦𝘳 🎨* 」°•

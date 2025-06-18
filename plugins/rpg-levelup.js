@@ -2,7 +2,7 @@ import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
-let img = await (await fetch(`https://cdn.russellxz.click/896b4f6c.PNG`)).Buffer()
+let img = await (await fetch(`https://qu.ax/Ghdtl.jpg`)).buffer()
 let name = conn.getName(m.sender)
 let user = global.db.data.users[m.sender]
 if (!canLevelUp(user.level, user.exp, global.multiplier)) {
@@ -20,7 +20,7 @@ txt += `*${before}* ➔ *${user.level}* [ ${user.role} ]\n\n`
 txt += `• 🌟 Nivel anterior : ${before}\n`
 txt += `• 🌟 Nuevo nivel : ${user.level}\n`
 txt += `• 📅 Fecha : ${new Date().toLocaleString('id-ID')}\n\n`
-txt += `🚩 *Nota:* _Cuanto más a menudo interactúes con *BOSS-bot🔥*, mayor será tu nivel_`
+txt += `🚩 *Nota:* _Cuanto más a menudo interactúes con *Zerway-bot🔥*, mayor será tu nivel_`
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)}}
 
 handler.help = ['levelup']

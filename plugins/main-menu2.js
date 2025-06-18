@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-let img = 'https://cdn.russellxz.click/896b4f6c.PNG' 
+let img = 'https://cdn.russellxz.click/25d97df3.png' 
 let texto = `*_M E N Ú - A U D I O S_* 🗣️
 「 *.on audios* 」  
 
@@ -8,7 +8,7 @@ let texto = `*_M E N Ú - A U D I O S_* 🗣️
 3. _TKA_.
 4. _Hey_.
 5. _Freefire_.
-6. _Alexniado_.
+6. _Feriado_.
 7. _Aguanta_.
 8. _Nadie te pregunto_.
 9. _Niconico_.

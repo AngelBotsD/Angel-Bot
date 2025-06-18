@@ -1,5 +1,5 @@
 let handler = async (m, { isPrems, conn }) => {
-let img = 'https://cdn.russellxz.click/896b4f6c.PNG' 
+let img = 'https://cdn.russellxz.click/25d97df3.png' 
 let texto = `
 「 *🦅 𝘔𝘢𝘴𝘤𝘰𝘵𝘢𝘴 🦅* 」
 ┣━━━━━━━━━━━━━━┫
@@ -27,7 +27,7 @@ let texto = `
 ║ 🎁 *.masc* ┊ Recompensas  
 ╚════════════════╝  
 
-> BOSSBOT 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 📈`
+> 𝚂𝙸𝚂𝙺𝙴𝙳 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 📈`
 
 const fkontak = {
 	"key": {

@@ -48,7 +48,7 @@ const paseos = [
    "Tu mascota descubrió un nuevo camino y lo exploraron juntos",
    "Hicieron senderismo y encontraron una cascada escondida",
    "Tu mascota persiguió mariposas durante el paseo",
-   "Fueron a la Alexnia y probaron algunas golosinas",
+   "Fueron a la feria y probaron algunas golosinas",
    "Salieron de noche y vieron las estrellas juntos",
    "Tu mascota hizo nuevos amigos en el parque para perros",
    "Visitaste una granja y tu mascota interactuó con otros animales",

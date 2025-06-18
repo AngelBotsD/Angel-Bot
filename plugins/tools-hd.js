@@ -20,8 +20,8 @@ let handler = async (m, { conn, command }) => {
     const imageUrl = await uploadToCatbox(img)
     const api = `https://fastrestapis.fasturl.cloud/aiimage/upscale?imageUrl=${encodeURIComponent(imageUrl)}&resize=4`
     const res = await fetch(api)
-    const Buffer = await res.Buffer()
-    await conn.sendFile(m.chat, Buffer, 'hd.jpg', '𝙸𝚖𝚊𝚐𝚎𝚗 𝚎𝚗𝚝𝚛𝚎𝚐𝚊𝚍𝚊, 𝚐𝚛𝚊𝚌𝚒𝚊𝚜 𝚙𝚘𝚛 𝚎𝚜𝚙𝚎𝚛𝚊𝚛 🤗', m)
+    const buffer = await res.buffer()
+    await conn.sendFile(m.chat, buffer, 'hd.jpg', '𝙸𝚖𝚊𝚐𝚎𝚗 𝚎𝚗𝚝𝚛𝚎𝚐𝚊𝚍𝚊, 𝚐𝚛𝚊𝚌𝚒𝚊𝚜 𝚙𝚘𝚛 𝚎𝚜𝚙𝚎𝚛𝚊𝚛 🤗', m)
   } catch {
     error = true
   } finally {
@@ -36,10 +36,10 @@ handler.command = /^(hd|remini)$/i
 
 export default handler
 
-async function uploadToCatbox(Buffer) {
+async function uploadToCatbox(buffer) {
   const form = new FormData()
   form.append('reqtype', 'fileupload')
-  form.append('fileToUpload', Buffer, 'image.jpg')
+  form.append('fileToUpload', buffer, 'image.jpg')
   const res = await fetch('https://catbox.moe/user/api.php', { method: 'POST', body: form })
   const url = await res.text()
   if (!url.startsWith('https://')) throw 'gagal upload ke Catbox'

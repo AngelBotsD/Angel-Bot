@@ -7,7 +7,7 @@ const getGroupAdmins = (participants) => {
 };
 
 const handler = async (m, { conn, participants, args }) => {
-    let defaultPP = 'https://cdn.russellxz.click/896b4f6c.PNG';
+    let defaultPP = 'https://qu.ax/Ghdtl.jpg';
     let pp = defaultPP; 
 
     try {

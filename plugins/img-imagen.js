@@ -4,7 +4,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `*🚩 Uso Correcto: ${usedPrefix + command} Avión*`;
 
   const botname = global.botname; 
-  const wm = 'BOSS - 𝙂𝙊𝙊𝘿';
+  const wm = '𝙎𝙄𝙎𝙆𝙀𝘿 - 𝙂𝙊𝙊𝘿';
   const channel = global.channel;
   const textbot = global.textbot; 
   const rcanal = icons;
