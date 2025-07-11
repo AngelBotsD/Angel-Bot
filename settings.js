@@ -15,13 +15,13 @@ global.confirmCode = ''
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-   ['528125788206', 'jid', 'Alexn', true],
-   ['91560666484957', 'lid', 'Alexn', true],
+   ['584122216538', 'jid', 'Fer', true],
+   ['91560666484957', 'lid', 'Ferr', true],
    ['639489865908', 'jid', 'Noss', true],
    ['33157734735917', 'lid', 'Noss', true],
-   ['528125788206', 'Alexn', true],
-   ['528125788206', 'jid', 'Alexn', true],
-   ['256237983817905', 'lid', 'Alexn', true],
+   ['5214662354940', 'Ex de Fer', true],
+   ['584123989549', 'jid', 'Sisked', true],
+   ['256237983817905', 'lid', 'Sisked', true],
    ['573205521809'],
 ]
 
@@ -45,33 +45,33 @@ global.baileys = '@whiskeysockets/baileys'
 global.vs = '2.0.7'
 global.languaje = 'Español'
 global.nameqr = 'sisked-x'
-global.namebot = 'BOSSBOT'
-global.sessions = 'BOSSSession'
-global.jadi = 'BOSSJadiBot'
+global.namebot = 'WhitxsBot'
+global.sessions = 'WhitxsSession'
+global.jadi = 'WhitxsJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = 'BOSSBOT'
-global.botname = 'BOSSBOT'
+global.packname = 'WhitxsBot'
+global.botname = 'WhitxsBot'
 global.wm = '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘉𝘰𝘵'
-global.author = 'BOSSBOT'
-global.dev = 'BOSSBOT'
-global.textbot = '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 BOSSBOT'
+global.author = 'WhitxsBot'
+global.dev = 'WhitxsBot'
+global.textbot = '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 WhitxsBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.catalogo = fs.readFileSync('./src/img/catalogo.jpg')
 global.siskedurl = fs.readFileSync('./src/img/siskedurl.jpg')
-global.avatar = fs.readFileSync('./src/img/avatar_contact.png')
+global.avatar = fs.readFileSync('./src/img/avatar_contact.jpg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.grupo = 'https://chat.whatsapp.com/LbdiPrImAbI67gaA5Dyf3j'
-global.channel = 'https://chat.whatsapp.com/LbdiPrImAbI67gaA5Dyf3j'
-global.channel2 = 'https://chat.whatsapp.com/LbdiPrImAbI67gaA5Dyf3j'
-global.md = 'https://wa.me/qr/XDXDXDXD' 
-global.ig = 'https://www.instagram.com/alexnsnk7'
-global.tiktok = 'https://www.tiktok.com/@alexn1'
+global.grupo = 'https://chat.whatsapp.com/GNByNy3cVEkG1wkFSY3zfr'
+global.channel = 'https://whatsapp.com/channel/0029Vb47YlCLdQemgIavqj0v'
+global.channel2 = 'https://whatsapp.com/channel/0029Vb47YlCLdQemgIavqj0v'
+global.md = 'https://wa.me/qr/OEGLZUMXONHDL1' 
+global.ig = 'https://www.instagram.com/sisked_1'
+global.tiktok = 'https://www.tiktok.com/@sisked1'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 

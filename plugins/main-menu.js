@@ -1,6 +1,6 @@
 let handler = async (m, { isPrems, conn }) => {
 m.react('💱')
-let img = 'https://cdn.russellxz.click/25d97df3.png' 
+let img = 'https://cdn.russellxz.click/c7839340.jpg' 
 let texto = `
 🪙 𝐌 𝐔 𝐋 𝐓 𝐈 - 𝐌 𝐄 𝐍 𝐔́ 
 
@@ -359,7 +359,7 @@ const fkontak = {
 	},
 	"participant": "0@s.whatsapp.net"
 }
-await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, rcanal, fkontak)
+await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null)
 global.db.data.users[m.sender].lastcofre = new Date * 1
 }
 

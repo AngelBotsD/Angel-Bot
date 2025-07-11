@@ -197,7 +197,7 @@ if (m.isGroup) {
       if (!conn.chats[m.chat]) conn.chats[m.chat] = {};
       conn.chats[m.chat].metadata = groupMetadata;
     } catch (e) {
-      groupMetadata = {};
+      groupMetadata = {}; // evita ruptura si da error
     }
   }
 }
@@ -504,16 +504,16 @@ console.error(e)
 
 global.dfail = (type, m, conn) => {
 const msg = {
-rowner: `🚩 Comando exclusivo para *@Zerway*.`,
-owner: `♌ Este Comando Solo Puede Ser Utilizado Por *@Zerway*.`,
+rowner: `🚩 Comando exclusivo para *@Fxrr*.`,
+owner: `♌ Este Comando Solo Puede Ser Utilizado Por *@Fxrr*.`,
 group: `⚠️ Comando exclusivo para *Grupos*.`,
 private: `⚠️ Comando exclusivo para *Chat Privado.*`,
 admin: `⚠️ Comando exclusivo para los *Administradores.*`,
 botAdmin: `⚠️ El Bot Requiere *Admin* para utilizar este *Comando.*`,
-unreg: `🤚🏻 Espera, Para Usar Este Comando Debes Estar *Registrado.*\n\nUtiliza: */reg nombre.edad*\n\n> Ejemplo: /reg Zerway.17`,
+unreg: `🤚🏻 Espera, Para Usar Este Comando Debes Estar *Registrado.*\n\nUtiliza: */reg nombre.edad*\n\n> Ejemplo: /reg Fxrr.20`,
 restrict: `⚠️ Esta Característica Está *Deshabilitada.*`  
 }[type];
-if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}
+if (msg) return conn.reply(m.chat, msg, m).then(_ => m.react('✖️'))}
 
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {

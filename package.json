@@ -1,5 +1,5 @@
 {
-"name": "BOSS",
+"name": "Zarway",
 "version": "2.0.7",
 "description": "Simple WhatsApp Bot Multi Device",
 "main": "index.js",
@@ -18,20 +18,20 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/Adrianmaze/-Bot",
+"homepage": "https://github.com/Adrianmaze/Ferr-Bot",
 "author": {
-"name": "Alexn"
+"name": "Ferr"
 },
 "collaborators": {
-"col1": "@alexn",
+"col1": "@Sisked",
 "col2": "@Anuar"
 },
 "repository": {
 "type": "git",
-"url": "git+https://github.com/Adrianmaze/Alexn-Bot.git"
+"url": "git+https://github.com/Adrianmaze/Ferr-Bot.git"
 },
 "bugs": {
-"url": "https://github.com/Adrianmaze/Alexn-Bot/issues"
+"url": "https://github.com/Adrianmaze/Ferr-Bot/issues"
 },
 "license": "GPL-3.0-or-later",
 "dependencies": {

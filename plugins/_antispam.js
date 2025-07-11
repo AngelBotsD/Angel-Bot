@@ -16,7 +16,7 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
   const timeWindow = 5000 // 5 segundos
   const messageLimit = 10
 
-  const warnTimeout = 30000 // tiempo para reiniciar advertencia (30s)
+  const warnTimeout = 30000 
 
   if (!userSpamData[sender]) {
     userSpamData[sender] = {
@@ -43,7 +43,6 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
         data.warned = true
         data.messageCount = 1
 
-        // Reiniciar advertencia tras timeout
         data.timeout = setTimeout(() => {
           delete userSpamData[sender]
         }, warnTimeout)

@@ -29,7 +29,7 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args }) 
   const pesan = args.join` `;
   const groupMetadata = await conn.groupMetadata(m.chat);
   const groupName = groupMetadata.subject;
-  let teks = `*${groupName}*\n\nhttps://chat.whatsapp.com/IkYunjDlaPT3rs4nsBY59Y\n`;
+  let teks = `*${groupName}*\n\n\ ———————————————————\n\ *Bienvenido a ventas FxrrXWayz donde encuentras diamantes, cuentas, suscripciones de apps y mucho más, para más información entra en el siguiente link.* \n\> https://chat.whatsapp.com/IkYunjDlaPT3rs4nsBY59Y \n\ ———————————————————\n`;
   teks += `𝙈𝙞𝙚𝙢𝙗𝙧𝙤𝙨: *${participants.length}*\n`;
   teks += `${pesan}\n┌──⭓ 𝙇𝙞𝙨𝙩𝙖\n`;
 
@@ -38,7 +38,7 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args }) 
     teks += `${flagOrEmoji} @${mem.id.split('@')[0]}\n`;
   }
 
-  teks += `└───────⭓\n\n> 𝙕𝙚𝙧𝙬𝙖𝙮𝘽𝙤𝙩🔥`;
+  teks += `└───────⭓`;
   await conn.sendMessage(m.chat, { 
     text: teks,
     mentions: participants.map((a) => a.id)

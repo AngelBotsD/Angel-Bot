@@ -151,12 +151,13 @@ opcion = '2'
 if (!conn.authState.creds.registered) {  
 if (MethodMobile) throw new Error('No se puede usar un código de emparejamiento con la API móvil')
 
-  const PHONENUMBER_MCC = {
+const PHONENUMBER_MCC = {
   "52": "MX", "54": "AR", "55": "BR", "56": "CL", "57": "CO", "58": "VE",
   "591": "BO", "592": "GY", "593": "EC", "595": "PY", "598": "UY", "51": "PE",
   "506": "CR", "507": "PA", "504": "HN", "505": "NI", "502": "GT", "503": "SV",
   "1": "US"
-  }
+ }
+  
 let numeroTelefono
 if (!!phoneNumber) {
 numeroTelefono = phoneNumber.replace(/[^0-9]/g, '')
@@ -428,7 +429,7 @@ console.log(chalk.bold.cyanBright(`\n╭» 🟢 MULTIMEDIA 🟢\n│→ ARCHIVOS
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return
 await purgeSession()
-console.log(chalk.bold.cyanBright(`\n╭» 🔵 ${global.sessions} 🔵\n│→ SESIONES NO ESENCIALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))}, 1000 * 60 * 10) // 10 min
+console.log(chalk.bold.cyanBright(`\n╭» 🔵 ${global.sessions} 🔵\n│→ SESIONES NO ESENCIALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))}, 1000 * 60 * 5) // 10 min
 
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return

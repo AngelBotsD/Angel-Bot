@@ -93,7 +93,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const thumb = (await conn.getFile(thumbnail))?.data;
 
     const infoCancion = `
-> 📥 *ZERWAY 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁*
+> 📥 *Whitxs 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁*
  
 🎵 *𝚃𝚒𝚝𝚞𝚕𝚘:* ${title}
 🎤 *𝙰𝚛𝚝𝚒𝚜𝚝𝚊:* ${author.name}

@@ -12,7 +12,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let jid = m.messageStubParameters?.[0] || ''
   if (!jid) return
 
-  let pp = await conn.profilePictureUrl(jid, 'image').catch(_ => 'https://cdn.russellxz.click/25d97df3.png')
+  let pp = await conn.profilePictureUrl(jid, 'image').catch(_ => 'https://cdn.russellxz.click/c7839340.jpg')
   let img = await (await fetch(pp)).buffer()
 
   let user = `@${jid.split('@')[0]}`
@@ -31,7 +31,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   if (chat.bienvenida && m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
     let bienvenida = crearMensaje(
       chat.sWelcome,
-      `👋🏻 Bienvenido/a ${user}\n Le damos una cordial bienvenida al grupo: *${group}*.\n⚠️ Descripción del grupo:\n${desc}\n\n> 𝐙𝐞𝐫𝐰𝐚𝐲𝐛𝐨𝐭 🔥`
+      `👋🏻 Bienvenido/a ${user}\n Le damos una cordial bienvenida al grupo: *${group}*.\n⚠️ Descripción del grupo:\n${desc}\n\n> Whitxs Bot`
     )
     await conn.sendMessage(m.chat, { image: img, caption: bienvenida, mentions: [jid] })
   }

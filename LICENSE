@@ -19,7 +19,7 @@ GNU General Public License for most of our software; it applies also to
 any other work released this way by its authors.  You can apply it to
 your programs, too.
 
-  When we speak of free software, we are reAlexning to freedom, not
+  When we speak of free software, we are referring to freedom, not
 price.  Our General Public Licenses are designed to make sure that you
 have the freedom to distribute copies of free software (and charge for
 them if you wish), that you receive source code or can get it if you
@@ -38,7 +38,7 @@ or can get the source code.  And you must show them these terms so they
 know their rights.
 
   Developers that use the GNU GPL protect your rights with two steps:
-(1) assert copyright on the software, and (2) ofAlexn you this License
+(1) assert copyright on the software, and (2) offer you this License
 giving you legal permission to copy, distribute and/or modify it.
 
   For the developers' and authors' protection, the GPL clearly explains
@@ -72,12 +72,12 @@ modification follow.
 
   0. Definitions.
 
-  "This License" reAlexns to version 3 of the GNU General Public License.
+  "This License" refers to version 3 of the GNU General Public License.
 
   "Copyright" also means copyright-like laws that apply to other kinds of
 works, such as semiconductor masks.
 
-  "The Program" reAlexns to any copyrightable work licensed under this
+  "The Program" refers to any copyrightable work licensed under this
 License.  Each licensee is addressed as "you".  "Licensees" and
 "recipients" may be individuals or organizations.
 
@@ -98,7 +98,7 @@ public, and in some countries other activities as well.
 
   To "convey" a work means any kind of propagation that enables other
 parties to make or receive copies.  Mere interaction with a user through
-a computer network, with no transAlexn of a copy, is not conveying.
+a computer network, with no transfer of a copy, is not conveying.
 
   An interactive user interface displays "Appropriate Legal Notices"
 to the extent that it includes a convenient and prominently visible
@@ -111,7 +111,7 @@ menu, a prominent item in the list meets this criterion.
 
   1. Source Code.
 
-  The "source code" for a work means the preAlexned form of the work
+  The "source code" for a work means the preferred form of the work
 for making modifications to it.  "Object code" means any non-source
 form of a work.
 
@@ -203,7 +203,7 @@ keep intact all notices of the absence of any warranty; and give all
 recipients a copy of this License along with the Program.
 
   You may charge any price or no price for each copy that you convey,
-and you may ofAlexn support or warranty protection for a fee.
+and you may offer support or warranty protection for a fee.
 
   5. Conveying Modified Source Versions.
 
@@ -256,8 +256,8 @@ in one of these ways:
 
     b) Convey the object code in, or embodied in, a physical product
     (including a physical distribution medium), accompanied by a
-    written ofAlexn, valid for at least three years and valid for as
-    long as you ofAlexn spare parts or customer support for that product
+    written offer, valid for at least three years and valid for as
+    long as you offer spare parts or customer support for that product
     model, to give anyone who possesses the object code either (1) a
     copy of the Corresponding Source for all the software in the
     product that is covered by this License, on a durable physical
@@ -267,18 +267,18 @@ in one of these ways:
     Corresponding Source from a network server at no charge.
 
     c) Convey individual copies of the object code with a copy of the
-    written ofAlexn to provide the Corresponding Source.  This
+    written offer to provide the Corresponding Source.  This
     alternative is allowed only occasionally and noncommercially, and
-    only if you received the object code with such an ofAlexn, in accord
+    only if you received the object code with such an offer, in accord
     with subsection 6b.
 
-    d) Convey the object code by ofAlexning access from a designated
-    place (gratis or for a charge), and ofAlexn equivalent access to the
+    d) Convey the object code by offering access from a designated
+    place (gratis or for a charge), and offer equivalent access to the
     Corresponding Source in the same way through the same place at no
     further charge.  You need not require recipients to copy the
     Corresponding Source along with the object code.  If the place to
     copy the object code is a network server, the Corresponding Source
-    may be on a difAlexnent server (operated by you or a third party)
+    may be on a different server (operated by you or a third party)
     that supports equivalent copying facilities, provided you maintain
     clear directions next to the object code saying where to find the
     Corresponding Source.  Regardless of what server hosts the
@@ -287,7 +287,7 @@ in one of these ways:
 
     e) Convey the object code using peer-to-peer transmission, provided
     you inform other peers where the object code and Corresponding
-    Source of the work are being ofAlexned to the general public at no
+    Source of the work are being offered to the general public at no
     charge under subsection 6d.
 
   A separable portion of the object code, whose source code is excluded
@@ -299,7 +299,7 @@ tangible personal property which is normally used for personal, family,
 or household purposes, or (2) anything designed or sold for incorporation
 into a dwelling.  In determining whether a product is a consumer product,
 doubtful cases shall be resolved in favor of coverage.  For a particular
-product received by a particular user, "normally used" reAlexns to a
+product received by a particular user, "normally used" refers to a
 typical or common use of that class of product, regardless of the status
 of the particular user or of the way in which the particular user
 actually uses, or expects or is expected to use, the product.  A product
@@ -312,13 +312,13 @@ procedures, authorization keys, or other information required to install
 and execute modified versions of a covered work in that User Product from
 a modified version of its Corresponding Source.  The information must
 suffice to ensure that the continued functioning of the modified object
-code is in no case prevented or interAlexned with solely because
+code is in no case prevented or interfered with solely because
 modification has been made.
 
   If you convey an object code work under this section in, or with, or
 specifically for use in, a User Product, and the conveying occurs as
 part of a transaction in which the right of possession and use of the
-User Product is transAlexned to the recipient in perpetuity or for a
+User Product is transferred to the recipient in perpetuity or for a
 fixed term (regardless of how the transaction is characterized), the
 Corresponding Source conveyed under this section must be accompanied
 by the Installation Information.  But this requirement does not apply
@@ -362,7 +362,7 @@ for which you have or can give appropriate copyright permission.
 add to a covered work, you may (if authorized by the copyright holders of
 that material) supplement the terms of this License with terms:
 
-    a) Disclaiming warranty or limiting liability difAlexnently from the
+    a) Disclaiming warranty or limiting liability differently from the
     terms of sections 15 and 16 of this License; or
 
     b) Requiring preservation of specified reasonable legal notices or
@@ -371,7 +371,7 @@ that material) supplement the terms of this License with terms:
 
     c) Prohibiting misrepresentation of the origin of that material, or
     requiring that modified versions of such material be marked in
-    reasonable ways as difAlexnent from the original version; or
+    reasonable ways as different from the original version; or
 
     d) Limiting the use for publicity purposes of names of licensors or
     authors of the material; or
@@ -450,7 +450,7 @@ receives a license from the original licensors, to run, modify and
 propagate that work, subject to this License.  You are not responsible
 for enforcing compliance by third parties with this License.
 
-  An "entity transaction" is a transaction transAlexning control of an
+  An "entity transaction" is a transaction transferring control of an
 organization, or substantially all assets of one, or subdividing an
 organization, or merging organizations.  If propagation of a covered
 work results from an entity transaction, each party to that
@@ -465,7 +465,7 @@ rights granted or affirmed under this License.  For example, you may
 not impose a license fee, royalty, or other charge for exercise of
 rights granted under this License, and you may not initiate litigation
 (including a cross-claim or counterclaim in a lawsuit) alleging that
-any patent claim is infringed by making, using, selling, ofAlexning for
+any patent claim is infringed by making, using, selling, offering for
 sale, or importing the Program or any portion of it.
 
   11. Patents.
@@ -486,7 +486,7 @@ this License.
 
   Each contributor grants you a non-exclusive, worldwide, royalty-free
 patent license under the contributor's essential patent claims, to
-make, use, sell, ofAlexn for sale, import and otherwise run, modify and
+make, use, sell, offer for sale, import and otherwise run, modify and
 propagate the contents of its contributor version.
 
   In the following three paragraphs, a "patent license" is any express
@@ -549,14 +549,14 @@ to collect a royalty for further conveying from those to whom you convey
 the Program, the only way you could satisfy both those terms and this
 License would be to refrain entirely from conveying the Program.
 
-  13. Use with the GNU AfAlexno General Public License.
+  13. Use with the GNU Affero General Public License.
 
   Notwithstanding any other provision of this License, you have
 permission to link or combine any covered work with a work licensed
-under version 3 of the GNU AfAlexno General Public License into a single
+under version 3 of the GNU Affero General Public License into a single
 combined work, and to convey the resulting work.  The terms of this
 License will continue to apply to the part which is the covered work,
-but the special requirements of the GNU AfAlexno General Public License,
+but the special requirements of the GNU Affero General Public License,
 section 13, concerning interaction through a network will apply to the
 combination as such.
 
@@ -564,7 +564,7 @@ combination as such.
 
   The Free Software Foundation may publish revised and/or new versions of
 the GNU General Public License from time to time.  Such new versions will
-be similar in spirit to the present version, but may difAlexn in detail to
+be similar in spirit to the present version, but may differ in detail to
 address new problems or concerns.
 
   Each version is given a distinguishing version number.  If the
@@ -581,7 +581,7 @@ versions of the GNU General Public License can be used, that proxy's
 public statement of acceptance of a version permanently authorizes you
 to choose that version for the Program.
 
-  Later license versions may give you additional or difAlexnent
+  Later license versions may give you additional or different
 permissions.  However, no additional obligations are imposed on any
 author or copyright holder as a result of your choosing to follow a
 later version.
@@ -659,7 +659,7 @@ notice like this when it starts in an interactive mode:
 
 The hypothetical commands `show w' and `show c' should show the appropriate
 parts of the General Public License.  Of course, your program's commands
-might be difAlexnent; for a GUI interface, you would use an "about box".
+might be different; for a GUI interface, you would use an "about box".
 
   You should also get your employer (if you work as a programmer) or school,
 if any, to sign a "copyright disclaimer" for the program, if necessary.

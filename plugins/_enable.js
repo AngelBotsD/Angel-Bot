@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   if (!type) {
     let estado = (valor) => valor ? '✅' : '❌'
     let texto = `
-╭━〔 𝚂𝙸𝚂𝙺𝙴𝙳 𝙴𝚂𝚃𝙰𝙳𝙾 〕━⬣
+╭━〔 WhitxsBot Estado 〕━⬣
 ┃ Bienvenida: ${estado(chat.bienvenida)}
 ┃ Auto Detect: ${estado(chat.detect)}
 ┃ Modo Admin: ${estado(chat.modoadmin)}

@@ -1,5 +1,5 @@
 let handler = async (m, { isPrems, conn }) => {
-let img = 'https://cdn.russellxz.clickhttps://cdn.russellxz.click/25d97df3.png' 
+let img = 'https://cdn.russellxz.clickhttps://cdn.russellxz.click/c7839340.jpg' 
 let texto = `╭─ ⭑ *FREE FIRE MENU* ⭑ ─╮
 
 📌 *MAPAS GENERALES*
@@ -41,7 +41,7 @@ const fkontak = {
 	},
 	"participant": "0@s.whatsapp.net"
 }
-await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, rcanal, fkontak)
+await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, fkontak)
 }
 handler.help = ['menuff', 'menu4']
 handler.tags = ['freefire' ,'main'] 

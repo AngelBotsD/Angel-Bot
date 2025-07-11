@@ -31,7 +31,7 @@ handler.all = async function (m, { conn }) {
   // Datos básicos
   global.creador = 'Wa.me/584122216538'
   global.asistencia = 'https://wa.me/qr/OEGLZUMXONHDL1'
-  global.namechannel = '𝙕𝙚𝙧𝙬𝙖𝙮𝘽𝙤𝙩'
+  global.namechannel = 'WhitxsBot'
 
   global.rwait = '🕒'
   global.done = '✅'
@@ -86,7 +86,7 @@ handler.all = async function (m, { conn }) {
   }
 
   const iconos = [
-    'https://cdn.russellxz.click/25d97df3.png'
+    'https://cdn.russellxz.click/c7839340.jpg'
   ]
   global.icono = iconos[Math.floor(Math.random() * iconos.length)]
 

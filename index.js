@@ -23,7 +23,7 @@ if (collaborators.hasOwnProperty(key)) {
 activeCollaborators += collaborators[key] + ', '
 }}
 activeCollaborators = activeCollaborators.slice(0, -2);
-cfonts.say('BOSS\nBot', {
+cfonts.say('Whitxs\nBot', {
 align: 'center',           
 gradient: ['red', 'blue'] 
 })
@@ -33,7 +33,7 @@ align: 'center',
 gradient: ['blue', 'magenta']
 })
 const message = `${subtitleStyle('Desarrollado por »')} ${responseStyle(author.name)}
-${subtitleStyle('Código basado por »')} ${responseStyle('@alexn')}
+${subtitleStyle('Código basado por »')} ${responseStyle('@Sisked')}
 ${subtitleStyle('Colaboradores activos »')} ${responseStyle(activeCollaborators)}
 ${subtitleStyle('Versión »')} ${responseStyle(version)}`
 console.log(boxen(message, { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'blue', float: 'center', }))

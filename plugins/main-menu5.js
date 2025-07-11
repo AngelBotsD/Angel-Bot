@@ -1,5 +1,5 @@
 let handler = async (m, { isPrems, conn }) => {
-let img = 'https://cdn.russellxz.click/25d97df3.png' 
+let img = 'https://cdn.russellxz.click/c7839340.jpg' 
 let texto = `
 「 *🦅 𝘔𝘢𝘴𝘤𝘰𝘵𝘢𝘴 🦅* 」
 ┣━━━━━━━━━━━━━━┫
@@ -43,7 +43,7 @@ const fkontak = {
 	},
 	"participant": "0@s.whatsapp.net"
 }
-await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, rcanal, fkontak)
+await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, fkontak)
 global.db.data.users[m.sender].lastcofre = new Date * 1
 }
 handler.help = ['menu5', 'menumasc']

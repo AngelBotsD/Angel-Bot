@@ -11,7 +11,8 @@ let handler = async (m, { conn }) => {
             });
 }
 handler.help = ['ping']
+handler.help = ['p']
 handler.tags = ['main']
-handler.command = ['velocidad', 'speed', 'ping']
+handler.command = ['velocidad', 'speed', 'ping', 'p']
 
 export default handler

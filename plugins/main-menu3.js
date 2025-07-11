@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) => {
-let img = 'https://cdn.russellxz.click/25d97df3.png' 
+let img = 'https://cdn.russellxz.click/c7839340.jpg' 
 let texto = `
 ╔═════════════════╗
 ┇•°「 *𝘓𝘰𝘨𝘰 - 𝘮𝘢𝘬𝘦𝘳 🎨* 」°•
@@ -53,7 +53,7 @@ const fkontak = {
 	},
 	"participant": "0@s.whatsapp.net"
 }
-await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, rcanal, fkontak)
+await conn.sendFile(m.chat, img, 'img.jpg', texto, m, null, fkontak)
 }
 handler.help = ['menu3']
 handler.tags = ['main', 'logo']

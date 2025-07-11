@@ -120,7 +120,7 @@ const handler = async (m, { conn, args, isOwner, command }) => {
       const groupIndex = parseInt(rest[0]);
       const groupId = getGroupIdByIndex(groupIndex);
       if (!groupId) return m.reply('Número de grupo inválido.');
-      const mensaje = '𝙲𝚘́𝚖𝚘 𝚝𝚞́ 𝙿𝚊𝚙𝚊́, 𝚃𝚎 𝚊𝚋𝚊𝚗𝚍𝚘𝚗𝚘 🏃🏻‍♂️ Zerwaybot 🔥';
+      const mensaje = '𝙲𝚘́𝚖𝚘 𝚝𝚞́ 𝙿𝚊𝚙𝚊́, 𝚃𝚎 𝚊𝚋𝚊𝚗𝚍𝚘𝚗𝚘 🏃🏻‍♂️ Whitxs Bot';
       await conn.sendMessage(groupId, { text: mensaje }, { quoted: m });
       await conn.groupLeave(groupId);
       return;

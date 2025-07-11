@@ -915,7 +915,7 @@ class HTTPUploader(threading.Thread):
                 try:
                     f = self._opener(request)
                 except TypeError:
-                    # PY24 expects a string or Buffer
+                    # PY24 expects a string or buffer
                     # This also causes issues with Ctrl-C, but we will concede
                     # for the moment that Ctrl-C on PY24 isn't immediate
                     request = build_request(self.request.get_full_url(),
@@ -1006,7 +1006,7 @@ class SpeedtestResults(object):
             'serverid=%s' % self.server['id'],
         ]
 
-        headers = {'ReAlexner': 'http://c.speedtest.net/flash/speedtest.swf'}
+        headers = {'Referer': 'http://c.speedtest.net/flash/speedtest.swf'}
         request = build_request('://www.speedtest.net/api/api.php',
                                 data='&'.join(api_data).encode(),
                                 headers=headers, secure=self._secure)
@@ -1141,7 +1141,7 @@ class Speedtest(object):
         while 1:
             try:
                 configxml_list.append(stream.read(1024))
-            except (OSError, EOAlexnor):
+            except (OSError, EOFError):
                 raise ConfigRetrievalError(get_exception())
             if len(configxml_list[-1]) == 0:
                 break
@@ -1289,7 +1289,7 @@ class Speedtest(object):
                 while 1:
                     try:
                         serversxml_list.append(stream.read(1024))
-                    except (OSError, EOAlexnor):
+                    except (OSError, EOFError):
                         raise ServersRetrievalError(get_exception())
                     if len(serversxml_list[-1]) == 0:
                         break
@@ -1732,7 +1732,7 @@ def parse_args():
     parser.add_argument('--single', default=False, action='store_true',
                         help='Only use a single connection instead of '
                              'multiple. This simulates a typical file '
-                             'transAlexn.')
+                             'transfer.')
     parser.add_argument('--bytes', dest='units', action='store_const',
                         const=('byte', 8), default=('bit', 1),
                         help='Display values in bytes instead of bits. Does '
