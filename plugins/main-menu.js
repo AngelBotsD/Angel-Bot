@@ -3,7 +3,6 @@ import fs from 'fs'
 let handler = async (m, { isPrems, conn }) => {
   m.react('🌐')
 
-  // Imagen local
   let imgPath = './src/img/catalogo.jpg'
   let imgBuffer = fs.readFileSync(imgPath)
 
@@ -361,7 +360,7 @@ let handler = async (m, { isPrems, conn }) => {
         externalAdReply: {
           title: "𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲",
           body: "𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲",
-          thumbnail: imgBuffer, // 👈 ahora usa tu imagen local
+          thumbnail: imgBuffer,
           sourceUrl: '',
           mediaType: 1,
           renderLargerThumbnail: false
