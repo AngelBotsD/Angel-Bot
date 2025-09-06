@@ -28,7 +28,6 @@ handler.all = async function (m, { conn }) {
     }
   }
 
-  // Datos básicos
   global.creador = 'Wa.me/584122216538'
   global.asistencia = 'https://wa.me/qr/OEGLZUMXONHDL1'
   global.namechannel = 'WhitxsBot'
@@ -42,7 +41,6 @@ handler.all = async function (m, { conn }) {
 
   global.wait = '🚀 Cargando...'
 
-  // Redes sociales aleatorias
   const redes = [
     'https://whatsapp.com/channel/0029Vb47YlCLdQemgIavqj0v',
     'https://www.tiktok.com/@sisked1',
@@ -51,13 +49,14 @@ handler.all = async function (m, { conn }) {
   ]
   global.redes = redes[Math.floor(Math.random() * redes.length)]
 
-  // Imagen aleatoria
   const db = './src/database/db.json'
   const dbData = JSON.parse(fs.readFileSync(db))
   const imgLinks = dbData.links?.imagen || []
   const randomImg = imgLinks[Math.floor(Math.random() * imgLinks.length)]
   const response = await fetch(randomImg)
   global.icons = await response.buffer()
+
+  global.icono = fs.readFileSync('./src/img/catalogo.jpg')
 
   global.fkontak = {
     key: {
@@ -85,11 +84,6 @@ handler.all = async function (m, { conn }) {
     quoted: m
   }
 
-  const iconos = [
-    'https://cdn.russellxz.click/c7839340.jpg'
-  ]
-  global.icono = iconos[Math.floor(Math.random() * iconos.length)]
-
   global.rcanal = {
     contextInfo: {
       isForwarded: true,
@@ -102,7 +96,7 @@ handler.all = async function (m, { conn }) {
         showAdAttribution: true,
         title: global.botname || 'Sisked Bot',
         body: global.dev || 'Sisked Dev',
-        thumbnailUrl: global.icono,
+        thumbnail: global.icono,
         sourceUrl: global.redes,
         mediaType: 1,
         renderLargerThumbnail: false
