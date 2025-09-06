@@ -76,7 +76,7 @@ handler.all = async function (m, { conn }) {
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363393959332331@newsletter',
+        newsletterJid: '',
         newsletterName: global.namechannel,
         serverMessageId: -1
       }
@@ -88,7 +88,7 @@ handler.all = async function (m, { conn }) {
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363393959332331@newsletter',
+        newsletterJid: '',
         serverMessageId: 100,
         newsletterName: global.namechannel
       },
