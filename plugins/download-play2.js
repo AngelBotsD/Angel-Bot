@@ -1,4 +1,3 @@
-// Plugins/music/play2.js
 import axios from "axios";
 import yts from "yt-search";
 import fs from "fs";
@@ -9,16 +8,16 @@ import { pipeline } from "stream";
 const streamPipe = promisify(pipeline);
 
 let handler = async (m, { conn, text }) => {
-  if (!text) return conn.sendMessage(m.chat, { text: `✳️ Usa:\n.play2 <término>\nEj: .play2 bad bunny` }, { quoted: m });
+  if (!text) return conn.sendMessage(m.chat, { text: "✳️ Usa: .play2 <término>" }, { quoted: m });
 
-  // --- Buscar video ---
+  // Buscar video
   const search = await yts(text);
   const video = search.videos[0];
   if (!video) return conn.sendMessage(m.chat, { text: "❌ Sin resultados." }, { quoted: m });
 
   const { url: videoUrl, title, timestamp: duration, views, author, thumbnail } = video;
 
-  // --- Preview ---
+  // Mensaje preview
   const caption = `
 🎬 Título: ${title}
 ⏱ Duración: ${duration}
@@ -34,17 +33,15 @@ let handler = async (m, { conn, text }) => {
     const tmp = path.join("./tmp");
     if (!fs.existsSync(tmp)) fs.mkdirSync(tmp, { recursive: true });
 
-    // Intentar varias calidades
+    // Probar varias calidades
     const qualities = ["720p", "480p", "360p"];
     let urlVideo = null;
-
     for (let q of qualities) {
       try {
         const res = await axios.get(`https://api.neoxr.eu/api/youtube?url=${encodeURIComponent(videoUrl)}&type=video&quality=${q}&apikey=russellxz`);
         if (res.data?.status && res.data.data?.url) { urlVideo = res.data.data.url; break; }
       } catch {}
     }
-
     if (!urlVideo) throw new Error("No se pudo obtener el video");
 
     const file = path.join(tmp, `${Date.now()}_video.mp4`);
@@ -60,16 +57,14 @@ let handler = async (m, { conn, text }) => {
     }, { quoted: m });
 
     fs.unlinkSync(file);
-
   } catch (e) {
-    console.error("Error en play2:", e);
+    console.error("Error play2:", e);
     await conn.sendMessage(m.chat, { text: "❌ Error al descargar el video." }, { quoted: m });
   }
 };
 
-// --- Configuración del handler ---
-handler.customPrefix = /^(play2|\.play2)\s+/i;
-handler.command = new RegExp;
+// Configuración del handler
+handler.command = /^play2$/i;  // reconoce ".play2"
 handler.exp = 0;
 
 export default handler;
