@@ -1,4 +1,4 @@
-import {Maker} from 'imagemaker.js';
+import {Maker} from 'logs.js';
 const handler = async (m, {conn, args, command, usedPrefix}) => {
   const response = args.join(' ').split('|');
   if (!args[0]) throw '*[❗] 𝙄𝙉𝙂𝙍𝙀𝙎𝙀 𝙐𝙉 𝙏𝙀𝙓𝙏𝙊*';
