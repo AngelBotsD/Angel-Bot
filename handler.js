@@ -510,7 +510,7 @@ group: `⚠️ Comando exclusivo para *Grupos*.`,
 private: `⚠️ Comando exclusivo para *Chat Privado.*`,
 admin: `⚠️ Comando exclusivo para los *Administradores.*`,
 botAdmin: `⚠️ El Bot Requiere *Admin* para utilizar este *Comando.*`,
-unreg: `🤚🏻 Espera, Para Usar Este Comando Debes Estar *Registrado.*\n\nUtiliza: */reg nombre.edad*\n\n> Ejemplo: /reg Fxrr.20`,
+unreg: `🤚🏻 Espera, Para Usar Este Comando Debes Estar *Registrado.*\n\nUtiliza: */reg nombre.edad*\n\n> Ejemplo: /reg xd.20`,
 restrict: `⚠️ Esta Característica Está *Deshabilitada.*`  
 }[type];
 if (msg) return conn.reply(m.chat, msg, m).then(_ => m.react('✖️'))}
