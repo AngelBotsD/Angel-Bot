@@ -65,12 +65,7 @@ let handler = async (m, { isPrems, conn }) => {
 ┃⋗ 🛡️ *.autoadmin*  
 ┃⋗ ⛔ *.ban @user*
 ┃⋗ ✅ *.unban @user* 
-┃⋗ 📈 *.dargod*  
-┃⋗ 📉 *.delgod*  
-┃⋗ 🧊 *.emotag*
-┃⋗ 📆 *.fechas*  
-┃⋗ 📢 *.anuncio*
-┃⋗ 🎖️ *.darxp [@usuario]*    
+┃⋗ 📢 *.anuncio* 
 ┃⋗ 🔑 *.dsowner*  
 ┃⋗ 🔑 *.limpiar*  
 ┃⋗ 🌐 *.join <link>*  
@@ -78,8 +73,6 @@ let handler = async (m, { isPrems, conn }) => {
 ┃⋗ 🚪 *.salir*  
 ┃⋗ 🔄 *.update*  
 ┃⋗ 💱 *.aviso*  
-┃⋗ 📈 *.cm*  
-┃⋗ 🛠️ *.cmd*  
 ┗━━━━━━━━━━━━━━┛  
 
 「 *🎨 𝘓𝘰𝘨𝘰 - 𝘮𝘢𝘬𝘦𝘳 🎨* 」     
