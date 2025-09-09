@@ -61,6 +61,21 @@ const handler = async (msg, { conn }) => {
 
     await conn.sendMessage(chatId, { sticker: { url: sticker } }, { quoted: msg });
 
+  await conn.sendMessage(m.chat, {
+    image: { url: img },
+    caption: texto,
+    contextInfo: {
+      externalAdReply: {
+        title: "𝗕𝗔𝗞𝗜 - 𝗕𝗢𝗧",
+        body: "",
+        thumbnailUrl: '',
+        sourceUrl: '',
+        mediaType: 1,
+        renderLargerThumbnail: false
+      }
+    }
+  }, { quoted: m })
+
     await conn.sendMessage(chatId, { react: { text: '✅', key: msg.key } });
 
   } catch (err) {
