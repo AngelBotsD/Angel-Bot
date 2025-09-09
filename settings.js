@@ -15,7 +15,7 @@ global.confirmCode = ''
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-   ['584122216538', 'jid', 'Fer', true],
+   ['5217227584934', 'jid', 'Fer', true],
    ['91560666484957', 'lid', 'Ferr', true],
    ['639489865908', 'jid', 'Noss', true],
    ['33157734735917', 'lid', 'Noss', true],
@@ -44,19 +44,19 @@ global.libreria = 'Baileys'
 global.baileys = '@whiskeysockets/baileys'
 global.vs = '2.0.7'
 global.languaje = 'Español'
-global.nameqr = 'sisked-x'
-global.namebot = 'WhitxsBot'
-global.sessions = 'WhitxsSession'
-global.jadi = 'WhitxsJadiBot'
+global.nameqr = 'Baki-x'
+global.namebot = 'BakiBot'
+global.sessions = 'BakoSession'
+global.jadi = 'BakiJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = 'WhitxsBot'
-global.botname = 'WhitxsBot'
+global.packname = 'BakiBot'
+global.botname = 'BakiBot'
 global.wm = '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 𝘉𝘰𝘵'
-global.author = 'WhitxsBot'
-global.dev = 'WhitxsBot'
-global.textbot = '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 WhitxsBot'
+global.author = 'BakiBot'
+global.dev = 'BakiBot'
+global.textbot = '𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱 BakiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
