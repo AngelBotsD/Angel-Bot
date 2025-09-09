@@ -4,7 +4,7 @@ const handler = async (m, { conn, participants, isAdmin, isOwner, command }) => 
 
   const total = participants.length;
   let texto = `*!  MENCION GENERAL  !*\n`;
-  texto += ` *PARA ${total} MIEMBROS* 🔔\n\n`;
+  texto += `   *PARA ${total} MIEMBROS* 🔔\n\n`;
 
   for (const user of participants) {
     const numero = user.id.split('@')[0];
