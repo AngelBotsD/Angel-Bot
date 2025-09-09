@@ -5,15 +5,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let targetUser
     let text
 
-    // Detectar si hay menciones
     if (m.mentionedJid && m.mentionedJid.length > 0) {
         targetUser = m.mentionedJid[0]
-        text = args.slice(1).join(' ') // El texto después del @
+        text = args.slice(1).join(' ')
     } else if (m.quoted) {
         targetUser = m.quoted.sender
         text = args.join(' ')
     } else {
-        // Si no hay mención ni reply, usar el autor del mensaje
         targetUser = m.sender
         text = args.join(' ')
     }
@@ -22,6 +20,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
     const wordCount = text.trim().split(/\s+/).length
     if (wordCount > 30) return m.reply('⚠️ *Máximo 30 palabras*')
+
+    await conn.sendMessage(m.chat, { react: { text: '🛠️', key: m.key } })
 
     let name = await conn.getName(targetUser)
     let pp = await conn.profilePictureUrl(targetUser, 'image').catch(_ => 'https://qu.ax/ZJKqt.jpg')
@@ -57,7 +57,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const buffer = Buffer.from(json.data.result.image, 'base64')
     const stiker = await sticker(buffer, false, '', '')
 
-    if (stiker) return conn.sendFile(m.chat, stiker, 'Quotly.webp', '', m)
+    if (stiker) {
+        await conn.sendFile(m.chat, stiker, 'Quotly.webp', '', m)
+        await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
+    }
 }
 
 handler.help = ['qc']
