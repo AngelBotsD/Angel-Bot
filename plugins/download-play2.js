@@ -1,7 +1,5 @@
-import yts from 'yt-search';
-import fs from 'fs';
-import axios from 'axios';
-import { downloadWithYtdlp, downloadWithDdownr } from '../lib/downloaders.js';
+import fetch from "node-fetch";
+import yts from "yt-search";
 
 // Helper for the extra APIs
 async function downloadWithApi(apiUrl) {
