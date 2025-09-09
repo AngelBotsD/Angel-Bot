@@ -17,10 +17,27 @@ const handler = async (m, { conn, participants }) => {
     const mtype = q.mtype || ''
 
     const isMedia = ['imageMessage','videoMessage','audioMessage','stickerMessage'].includes(mtype)
-
     const originalCaption = (q.msg?.caption || q.text || '').trim()
     const finalCaption = finalText || originalCaption || '📢 Notificación'
 
+    // 🔹 Primero mandamos la tarjeta tipo Business (logo + nombre + descripción)
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:;POLVORA BOT;;;
+FN:POLVORA BOT
+ORG:Soy un BOT - baki bot 
+TEL;type=CELL;type=VOICE;waid=573227261651:+57 322 7261651
+END:VCARD`
+
+    await conn.sendMessage(m.chat, { 
+      contacts: {
+        displayName: "baki bot ",
+        contacts: [{ vcard }]
+      },
+      mentions: users
+    }, { quoted: m })
+
+    // 🔹 Luego seguimos con tu lógica de notificación
     if (m.quoted && isMedia) {
       if (mtype === 'audioMessage') {
         try {
@@ -33,16 +50,10 @@ const handler = async (m, { conn, participants }) => {
           }, { quoted: m })
 
           if (finalText) {
-            await conn.sendMessage(m.chat, { 
-              text: finalText, 
-              mentions: users 
-            }, { quoted: m })
+            await conn.sendMessage(m.chat, { text: finalText, mentions: users }, { quoted: m })
           }
         } catch {
-          await conn.sendMessage(m.chat, { 
-            text: finalCaption, 
-            mentions: users 
-          }, { quoted: m })
+          await conn.sendMessage(m.chat, { text: finalCaption, mentions: users }, { quoted: m })
         }
       } else {
         const media = await q.download()
@@ -81,16 +92,10 @@ const handler = async (m, { conn, participants }) => {
           }, { quoted: m })
 
           if (finalText) {
-            await conn.sendMessage(m.chat, { 
-              text: finalText, 
-              mentions: users 
-            }, { quoted: m })
+            await conn.sendMessage(m.chat, { text: finalText, mentions: users }, { quoted: m })
           }
         } catch {
-          await conn.sendMessage(m.chat, { 
-            text: finalCaption, 
-            mentions: users 
-          }, { quoted: m })
+          await conn.sendMessage(m.chat, { text: finalCaption, mentions: users }, { quoted: m })
         }
       } else {
         const media = await m.download()
@@ -104,18 +109,12 @@ const handler = async (m, { conn, participants }) => {
       }
 
     } else {
-      await conn.sendMessage(m.chat, {
-        text: finalCaption,
-        mentions: users
-      }, { quoted: m })
+      await conn.sendMessage(m.chat, { text: finalCaption, mentions: users }, { quoted: m })
     }
 
   } catch (e) {
     const users = participants.map(u => conn.decodeJid(u.id))
-    await conn.sendMessage(m.chat, {
-      text: '📢 Notificación',
-      mentions: users
-    }, { quoted: m })
+    await conn.sendMessage(m.chat, { text: '📢 Notificación', mentions: users }, { quoted: m })
   }
 }
 
