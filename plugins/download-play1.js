@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
-import fg from 'senna-fg';
+import fetch from "node-fetch";
+import yts from "yt-search";
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
 
