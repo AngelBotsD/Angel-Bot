@@ -504,7 +504,7 @@ console.error(e)
 
 global.dfail = (type, m, conn) => {
 const msg = {
-rowner: `🚩 Comando exclusivo para *@Fxrr*.`,
+rowner: ````¡¡ 𝗦𝗢𝗟𝗢 𝗔𝗡𝗚𝗘𝗟 (𝗠𝗜 𝗖𝗥𝗘𝗔𝗗𝗢𝗥) 𝗣𝗨𝗘𝗗𝗘 𝗨𝗦𝗔𝗥 𝗘𝗦𝗧𝗘 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 !!````,
 owner: `♌ Este Comando Solo Puede Ser Utilizado Por *@Fxrr*.`,
 group: `⚠️ Comando exclusivo para *Grupos*.`,
 private: `⚠️ Comando exclusivo para *Chat Privado.*`,
