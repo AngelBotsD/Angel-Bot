@@ -68,7 +68,7 @@ const handler = async (msg, { conn }) => {
       externalAdReply: {
         title: "𝗕𝗔𝗞𝗜 - 𝗕𝗢𝗧",
         body: "",
-        thumbnailUrl: '',
+        thumbnailUrl: 'https://files.catbox.moe/jfov52.jpg',
         sourceUrl: '',
         mediaType: 1,
         renderLargerThumbnail: false
