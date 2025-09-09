@@ -34,53 +34,30 @@ let handler = async (m, { isPrems, conn }) => {
 
     「 *👥 𝘎𝘳𝘶𝘱𝘰𝘴 👥* 」     
 ┣━━━━━━━━━━━━━━┫  
-┃⋗ 💡 *.record*
 ┃⋗ 🗑️ *.del*   
 ┃⋗ 🔗 *.link*  
 ┃⋗ ❌ *.kick @user*  
 ┃⋗ 🎯 *.ruletaban*  
-┃⋗ 👮 *.admins < Texto >*  
 ┃⋗ 📣 *.todos*  
 ┃⋗ 🚫 *.banchat*  
 ┃⋗ ✅ *.unbanchat*  
 ┃⋗ 🚫 *.mute*  
 ┃⋗ ✅ *.unmute*  
-┃⋗ ⏰ *.horario*  
 ┃⋗ 🤫 *.hidetag*  
 ┃⋗ 📜 *.reglas*  
 ┃⋗ 👻 *.fantasmas*  
-┃⋗ 🔄 *.nuevolink*  
-┃⋗ 🎁 *.donarsala*  
-┃⋗ 🎟️ *.sorteo*  
-┃⋗ 📲 *.invite <número>*  
 ┃⋗ 🛠️ *.group open / close*  
 ┃⋗ 🔓 *.grupo abrir / cerrar*  
-┃⋗ 🖼️ *.setppgc*  
-┃⋗ ✏️ *.setname <text>*  
-┃⋗ 📝 *.setreglas + Texto*  
-┃⋗ 🔓 *.abrirgrupoen minutos*  
-┃⋗ 🔒 *.cerrargrupoen minutos*  
-┃⋗ 👋 *.setwelcome @user + texto*  
-┃⋗ 🗑️ *.delwelcome*
-┃⋗ 👋 *.setbye @user + texto* 
-┃⋗ 🗑️ *.delbye*
-┃⋗ 📊 *.encuesta pregunta|opciones*  
+┃⋗ 📝 *.setreglas + Texto*   
 ┃⋗ 📈 *.promote @usuario*  
 ┃⋗ 📉 *.demote @usuario*  
-┃⋗ 📈 *.darpoder @usuario*  
-┃⋗ 📉 *.delpoder @usuario*  
 ┗━━━━━━━━━━━━━━┛  
 
   「 *📥 𝘋𝘦𝘴𝘤𝘢𝘳𝘨𝘢𝘴 📥* 」     
 ┣━━━━━━━━━━━━━━┫  
 ┃⋗ 🎧 *.play <canción>*
 ┃⋗ 🎧 *.play1 <canción>*
-┃⋗ 🎧 *.spotify <canción>*
-┃⋗ 📸 *.ig <link>*  
-┃⋗ 🎥 *.fb <link>*
-┃⋗ 🎥 *.tiktok <url tt>*  
-┃⋗ 🖼️ *.tiktokimg <url>*  
-┃⋗ 🙋 *.tiktokuser <usuario>*          
+┃⋗ 🎧 *.spotify <canción>*     
 ┗━━━━━━━━━━━━━━┛  
 
    「 *😺 𝘊𝘳𝘦𝘢𝘥𝘰𝘳 😺* 」     
