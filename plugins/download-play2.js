@@ -88,5 +88,5 @@ const play2Command = {
   }
 };
 
-handler.command = ['play2'];
-export default handler;
+play2Command.command = ['play2'];
+export default play2Command;
