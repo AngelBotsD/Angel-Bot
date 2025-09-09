@@ -1,46 +1,29 @@
-import { exec } from 'child_process';
-import fs from 'fs';
-import path from 'path';
-import yts from 'yt-search';
+import { default as yts } from 'yt-search';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) return m.reply(`Escribe el nombre del video\nEjemplo: ${usedPrefix + command} karma police`);
+    if (!args || args.length === 0) 
+        return m.reply(`⚠️ Ingresa un nombre de canción o video.\nEjemplo: ${usedPrefix + command} karma police`);
 
     let query = args.join(' ');
+    
+    try {
+        // Buscar el video en YouTube
+        let results = await yts(query);
+        let video = results.videos[0];
 
-    // Buscar en YouTube
-    let searchResult = await yts(query);
-    let video = searchResult.videos.length > 0 ? searchResult.videos[0] : null;
-    if (!video) return m.reply('No encontré ningún video con ese nombre.');
+        if (!video) return m.reply('❌ No se encontró ningún video.');
 
-    let videoUrl = video.url;
-    let outputFile = path.join('./tmp', `${video.videoId}.mp4`);
-
-    // Crear carpeta tmp si no existe
-    if (!fs.existsSync('./tmp')) fs.mkdirSync('./tmp', { recursive: true });
-
-    // Descargar video usando yt-dlp
-    let downloadCommand = `yt-dlp -f mp4 -o "${outputFile}" "${videoUrl}"`;
-
-    m.reply(`⏳ Descargando: ${video.title}`);
-
-    exec(downloadCommand, async (err) => {
-        if (err) {
-            console.error(err);
-            return m.reply('❌ Ocurrió un error al descargar el video.');
-        }
-
-        // Enviar video al chat
-        await conn.sendMessage(m.chat, {
-            video: fs.readFileSync(outputFile),
-            caption: `🎬 ${video.title}\n${videoUrl}`,
-            mimetype: 'video/mp4'
+        // Mandar video
+        conn.sendMessage(m.chat, { 
+            video: { url: video.url }, 
+            caption: `🎵 *${video.title}*\n🔗 ${video.url}` 
         }, { quoted: m });
 
-        // Borrar archivo temporal
-        fs.unlinkSync(outputFile);
-    });
+    } catch (e) {
+        console.log(e);
+        m.reply('❌ Ocurrió un error al buscar el video.');
+    }
 };
 
-handler.command = /^(play2|video)$/i;
+handler.command = /^play2$/i;
 export default handler;
