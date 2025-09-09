@@ -4,7 +4,7 @@ const handler = async (m, { conn, participants, isAdmin, isOwner, command }) => 
 
   const total = participants.length;
   let texto = `*!  MENCION GENERAL  !*\n`;
-  texto += `*PARA ${total} MIEMBROS* 🔔\n\n`;
+  texto += ` *PARA ${total} MIEMBROS* 🔔\n\n`;
 
   for (const user of participants) {
     const numero = user.id.split('@')[0];
@@ -18,7 +18,7 @@ const handler = async (m, { conn, participants, isAdmin, isOwner, command }) => 
 };
 
 handler.customPrefix = /^\.?(todos|invocar|invocacion|invocación)$/i;
-handler.command = new RegExp(); // lo puedes dejar así
+handler.command = new RegExp();
 handler.group = true;
 handler.admin = true;
 
