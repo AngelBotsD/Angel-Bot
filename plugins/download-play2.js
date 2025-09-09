@@ -88,4 +88,7 @@ const play2Command = {
   }
 };
 
-export default play2Command;
+handler.tags = ['downloader']; 
+handler.help = ['spotify'];
+handler.command = ['play2'];
+export default handler;
