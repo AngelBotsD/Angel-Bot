@@ -1,11 +1,7 @@
-import fs from 'fs'
-
 let handler = async (m, { isPrems, conn }) => {
   m.react('🌐')
 
-  let imgPath = './src/img/catalogo.jpg'
-  let imgBuffer = fs.readFileSync(imgPath)
-
+  let img = 'https://cdn.russellxz.click/fa46d669.jpeg' 
   let texto = `🪙 𝐌 𝐔 𝐋 𝐓 𝐈 - 𝐌 𝐄 𝐍 𝐔́ 
 
       「 *📚 𝘐𝘯𝘧𝘰 📚* 」  
@@ -34,30 +30,53 @@ let handler = async (m, { isPrems, conn }) => {
 
     「 *👥 𝘎𝘳𝘶𝘱𝘰𝘴 👥* 」     
 ┣━━━━━━━━━━━━━━┫  
+┃⋗ 💡 *.record*
 ┃⋗ 🗑️ *.del*   
 ┃⋗ 🔗 *.link*  
 ┃⋗ ❌ *.kick @user*  
 ┃⋗ 🎯 *.ruletaban*  
+┃⋗ 👮 *.admins < Texto >*  
 ┃⋗ 📣 *.todos*  
 ┃⋗ 🚫 *.banchat*  
 ┃⋗ ✅ *.unbanchat*  
 ┃⋗ 🚫 *.mute*  
 ┃⋗ ✅ *.unmute*  
+┃⋗ ⏰ *.horario*  
 ┃⋗ 🤫 *.hidetag*  
 ┃⋗ 📜 *.reglas*  
 ┃⋗ 👻 *.fantasmas*  
+┃⋗ 🔄 *.nuevolink*  
+┃⋗ 🎁 *.donarsala*  
+┃⋗ 🎟️ *.sorteo*  
+┃⋗ 📲 *.invite <número>*  
 ┃⋗ 🛠️ *.group open / close*  
 ┃⋗ 🔓 *.grupo abrir / cerrar*  
-┃⋗ 📝 *.setreglas + Texto*   
+┃⋗ 🖼️ *.setppgc*  
+┃⋗ ✏️ *.setname <text>*  
+┃⋗ 📝 *.setreglas + Texto*  
+┃⋗ 🔓 *.abrirgrupoen minutos*  
+┃⋗ 🔒 *.cerrargrupoen minutos*  
+┃⋗ 👋 *.setwelcome @user + texto*  
+┃⋗ 🗑️ *.delwelcome*
+┃⋗ 👋 *.setbye @user + texto* 
+┃⋗ 🗑️ *.delbye*
+┃⋗ 📊 *.encuesta pregunta|opciones*  
 ┃⋗ 📈 *.promote @usuario*  
 ┃⋗ 📉 *.demote @usuario*  
+┃⋗ 📈 *.darpoder @usuario*  
+┃⋗ 📉 *.delpoder @usuario*  
 ┗━━━━━━━━━━━━━━┛  
 
   「 *📥 𝘋𝘦𝘴𝘤𝘢𝘳𝘨𝘢𝘴 📥* 」     
 ┣━━━━━━━━━━━━━━┫  
 ┃⋗ 🎧 *.play <canción>*
 ┃⋗ 🎧 *.play1 <canción>*
-┃⋗ 🎧 *.spotify <canción>*     
+┃⋗ 🎧 *.spotify <canción>*
+┃⋗ 📸 *.ig <link>*  
+┃⋗ 🎥 *.fb <link>*
+┃⋗ 🎥 *.tiktok <url tt>*  
+┃⋗ 🖼️ *.tiktokimg <url>*  
+┃⋗ 🙋 *.tiktokuser <usuario>*          
 ┗━━━━━━━━━━━━━━┛  
 
    「 *😺 𝘊𝘳𝘦𝘢𝘥𝘰𝘳 😺* 」     
@@ -65,7 +84,12 @@ let handler = async (m, { isPrems, conn }) => {
 ┃⋗ 🛡️ *.autoadmin*  
 ┃⋗ ⛔ *.ban @user*
 ┃⋗ ✅ *.unban @user* 
-┃⋗ 📢 *.anuncio* 
+┃⋗ 📈 *.dargod*  
+┃⋗ 📉 *.delgod*  
+┃⋗ 🧊 *.emotag*
+┃⋗ 📆 *.fechas*  
+┃⋗ 📢 *.anuncio*
+┃⋗ 🎖️ *.darxp [@usuario]*    
 ┃⋗ 🔑 *.dsowner*  
 ┃⋗ 🔑 *.limpiar*  
 ┃⋗ 🌐 *.join <link>*  
@@ -73,6 +97,8 @@ let handler = async (m, { isPrems, conn }) => {
 ┃⋗ 🚪 *.salir*  
 ┃⋗ 🔄 *.update*  
 ┃⋗ 💱 *.aviso*  
+┃⋗ 📈 *.cm*  
+┃⋗ 🛠️ *.cmd*  
 ┗━━━━━━━━━━━━━━┛  
 
 「 *🎨 𝘓𝘰𝘨𝘰 - 𝘮𝘢𝘬𝘦𝘳 🎨* 」     
@@ -122,18 +148,51 @@ let handler = async (m, { isPrems, conn }) => {
 
    「 *📴 𝘖𝘯 / 𝘖𝘧𝘧 📴* 」     
 ┣━━━━━━━━━━━━━━┫  
-┃⋗ ✅ *.on*  
-┃⋗ ❌ *.off*  
+┃⋗ ✅ *.enable*  
+┃⋗ ❌ *.disable*  
 ┗━━━━━━━━━━━━━━┛  
 
 「 *🔧 𝘏𝘦𝘳𝘳𝘢𝘮𝘪𝘦𝘯𝘵𝘢𝘴 🔧* 」     
 ┣━━━━━━━━━━━━━━┫  
+┃⋗ 🎙️ *.gtts <texto>*  
 ┃⋗ 🌦️ *.clima <ciudad/país>*  
+┃⋗ 🤥 *.fake <texto/@tag/texto>*
 ┃⋗ 💻 *.Ia <texto>*  
 ┃⋗ 🖼️ *.hd*  
+┃⋗ 🔠 *.morse <encode|decode>*  
 ┃⋗ 🔍 *.ver*  
 ┃⋗ 🔄 *.reenviar*  
+┃⋗ 🎥 *.togifaud*  
+┃⋗ 🎵 *.tomp3*  
+┃⋗ 🎥 *.tovid <sticker>* 
+┃⋗ 🎧 *.whatmusic* 
 ┗━━━━━━━━━━━━━━┛  
+
+「 *🦅 𝘔𝘢𝘴𝘤𝘰𝘵𝘢𝘴 🦅* 」
+┣━━━━━━━━━━━━━━┫
+┃⋗ 🛒 *.comprar*  
+┃⋗ 💲 *.contratar* 
+┃⋗ 🍖 *.alimentar*  
+┃⋗ 💰 *.costos*  
+┃⋗ 👀 *.nombre* 
+┃⋗ ☠️ *.demascota*  
+┃⋗ 🐺 *.mimascota*  
+┃⋗ 🐹 *.mascotas*  
+┃⋗ 🦅 *.mascota*
+┃⋗ 🕳️ *.excavar*
+┃⋗ 🐶 *.paseo*
+┃⋗ 🥎 *.pelota*
+┃⋗ 🚩 *.level*
+┃⋗ 🚩 *.levelmax*
+┃⋗ 🔥 *.batalla 1*
+┃⋗ 🛡️ *.batalla 2*
+┃⋗ 🗡️ *.batalla 3*
+┃⋗ 💣 *.batalla4*
+┃⋗ ⚔️ *.batallainfo* 
+┃⋗ 📍 *.infomasc*
+┃⋗ 👥 *.viajar*
+┃⋗ 🎁 *.masc*
+┗━━━━━━━━━━━━━━┛
 
    「 *🎲 𝘋𝘪𝘷𝘦𝘳𝘴𝘪𝘰́𝘯 🎲* 」     
 ┣━━━━━━━━━━━━━━┫  
@@ -240,10 +299,12 @@ let handler = async (m, { isPrems, conn }) => {
 
     「 *𝘚𝘵𝘪𝘤𝘬𝘦𝘳𝘴 🏞* 」     
 ┣━━━━━━━━━━━━━━┫  
-┃⋗ 🖼️ *.img (sticker)*  
+┃⋗ 🖼️ *.img (reply)*  
 ┃⋗ 💬 *.qc <texto>*  
+┃⋗ 💩 *.scat*  
 ┃⋗ 🎨 *.sticker*  
-┃⋗ 🖋️ *.wm <nombre>
+┃⋗ 🖋️ *.wm <nombre>|<autor>*  
+┃⋗ 🎞️ *.tovid <sticker>*  
 ┗━━━━━━━━━━━━━━┛
 
       「 *𝘕𝘴𝘧𝘸 🔞* 」
@@ -261,36 +322,46 @@ let handler = async (m, { isPrems, conn }) => {
 ┃⋗ 🔞 *.trapito*  
 ┗━━━━━━━━━━━━━━┛
 
+    「 *🌟 𝘙𝘗𝘎 🌟* 」     
+┣━━━━━━━━━━━━━━┫  
+┃⋗ 💼 *.claim*  
+┃⋗ 💼 *.crimen*  
+┃⋗ 🍬 *.dardulces *@user <cantidad>*  
+┃⋗ 🍬 *.dulces*  
+┃⋗ ⚡ *.levelup*  
+┃⋗ ⛏️ *.minar*  
+┃⋗ 🛍️ *.Buy*  
+┃⋗ 🛍️ *.Buyall*
+┃⋗ 💼 *.work*  
+┗━━━━━━━━━━━━━━┛  
+
    「 *📂 𝘙𝘦𝘨𝘪𝘴𝘵𝘳𝘰 📂* 」  
 ┣━━━━━━━━━━━━━━┫  
-┃⋗ 📝 *.perfil*   
+┃⋗ 📝 *.sn*  
+┃⋗ 📝 *.perfil*  
+┃⋗ 📝 *.perfil @user*  
 ┃⋗ 📝 *.reg *<nombre.edad>*  
 ┃⋗ 📝 *.unreg*  
 ┗━━━━━━━━━━━━━━┛`
 
-  await conn.sendFile(
-    m.chat,
-    imgBuffer,
-    'menu.jpg',
-    texto,
-    m,
-    null,
-    {
-      contextInfo: {
-        externalAdReply: {
-          title: "𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲",
-          body: "𝐀𝐧𝐠𝐞𝐥 𝐁𝐨𝐭 𝐃𝐞𝐥𝐚𝐲",
-          thumbnail: imgBuffer,
-          sourceUrl: '',
-          mediaType: 1,
-          renderLargerThumbnail: false
-        }
+  await conn.sendMessage(m.chat, {
+    image: { url: img },
+    caption: texto,
+    contextInfo: {
+      externalAdReply: {
+        title: "𝗕𝗔𝗞𝗜 - 𝗕𝗢𝗧",
+        body: "",
+        thumbnailUrl: img,
+        sourceUrl: '',
+        mediaType: 1,
+        renderLargerThumbnail: false
       }
     }
-  )
+  }, { quoted: m })
 
   global.db.data.users[m.sender].lastcofre = new Date * 1
 }
 
-handler.command = ['menu', 'menú', 'multimenu', 'help', 'comandos', 'ayuda']
+handler.customPrefix = /^(\.menu|menu)$/i
+handler.command = new RegExp 
 export default handler
