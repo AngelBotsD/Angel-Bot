@@ -1,108 +1,91 @@
-import fetch from "node-fetch";
-import yts from "yt-search";
+import yts from 'yt-search';
+import fs from 'fs';
+import axios from 'axios';
+import { downloadWithYtdlp, downloadWithDdownr } from '../lib/downloaders.js';
 
-const APIS = [
-  {
-    name: "siputzx",
-    url: (videoUrl) => `https://api.siputzx.my.id/api/d/ytmp4?url=${encodeURIComponent(videoUrl)}`,
-    extract: (data) => data?.result?.download?.url || data?.result?.url
-  },
-  {
-    name: "mahiru",
-    url: (videoUrl) => `https://mahiru-shiina.vercel.app/download/ytmp4?url=${encodeURIComponent(videoUrl)}`,
-    extract: (data) => data?.result?.download?.url || data?.result?.url
-  },
-  {
-    name: "agung",
-    url: (videoUrl) => `https://api.agungny.my.id/api/youtube-video?url=${encodeURIComponent(videoUrl)}`,
-    extract: (data) => data?.result?.download?.url || data?.result?.url
-  }
-];
+// Helper for the extra APIs
+async function downloadWithApi(apiUrl) {
+    const response = await axios.get(apiUrl);
+    const result = response.data;
+    const downloadUrl = result?.result?.downloadUrl || result?.result?.url || result?.data?.dl || result?.dl;
+    if (!downloadUrl) throw new Error(`API ${apiUrl} did not return a valid download link.`);
 
-async function getVideoUrl(videoUrl) {
-  let lastError = null;
-
-  for (const api of APIS) {
-    try {
-      console.log(`Probando API: ${api.name}`);
-      const apiUrl = api.url(videoUrl);
-      const response = await fetch(apiUrl, { timeout: 5000 });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      const videoLink = await api.extract(data);
-      if (videoLink) {
-        console.log(`Éxito con API: ${api.name}`);
-        return videoLink;
-      }
-    } catch (error) {
-      console.error(`Error con API ${api.name}:`, error.message);
-      lastError = error;
-      continue;
-    }
-  }
-
-  throw lastError || new Error("Todas las APIs fallaron");
+    const file = await axios.get(downloadUrl, { responseType: 'arraybuffer' });
+    return file.data;
 }
 
-let handler = async (m, { conn }) => {
-  const body = m.text?.trim();
-  if (!body) return;
-  if (!/^play2?\s+/i.test(body)) return;
+const play2Command = {
+  name: "play2",
+  category: "descargas",
+  description: "Busca y descarga un video en formato MP4 usando múltiples métodos.",
 
-  const query = body.replace(/^play2?\s+/i, "").trim();
-  if (!query) throw `⭐ Escribe el nombre del video\n\nEjemplo: play2 Bad Bunny - Monaco`;
+  async execute({ sock, msg, args }) {
+    if (args.length === 0) return sock.sendMessage(msg.key.remoteJid, { text: "Por favor, proporciona el nombre de un video." }, { quoted: msg });
 
-  try {
-    await conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
+    const query = args.join(' ');
+    let waitingMsg;
 
-    // Buscar video
-    const searchResults = await yts({ query, hl: "es", gl: "ES" });
-    const video = searchResults.videos[0];
-    if (!video) throw new Error("No se encontró el video");
-
-    if (video.seconds > 600) throw "❌ El video es muy largo (máximo 10 minutos)";
-
-    // Enviar miniatura
-    await conn.sendMessage(m.chat, {
-      image: { url: video.thumbnail },
-      caption: `*_${video.title}_*\n\n> 𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃 𝙳𝙴 𝚂𝙲𝙰𝚁𝙶𝙰𝚂 💻`
-    }, { quoted: m });
-
-    // Obtener video
-    let videoUrl;
     try {
-      videoUrl = await getVideoUrl(video.url);
-    } catch (e) {
-      console.error("Error al obtener video:", e);
-      throw "⚠️ Error al procesar el video. Intenta con otro";
+      waitingMsg = await sock.sendMessage(msg.key.remoteJid, { text: `🎶 Buscando "${query}"...` }, { quoted: msg });
+
+      const searchResults = await yts(query);
+      if (!searchResults.videos.length) throw new Error("No se encontraron resultados.");
+
+      const videoInfo = searchResults.videos[0];
+      const { title, url } = videoInfo;
+
+      await sock.sendMessage(msg.key.remoteJid, { text: `✅ Encontrado: *${title}*.\n\n⬇️ Descargando video...` }, { edit: waitingMsg.key });
+
+      let videoBuffer;
+
+      // --- Fallback System ---
+      try {
+        const tempFilePath = await downloadWithYtdlp(url, true); // true para video
+        videoBuffer = fs.readFileSync(tempFilePath);
+        fs.unlinkSync(tempFilePath);
+      } catch (e1) {
+        console.error("play2: yt-dlp failed:", e1.message);
+        try {
+          const downloadUrl = await downloadWithDdownr(url, true); // true para video
+          const response = await axios.get(downloadUrl, { responseType: 'arraybuffer' });
+          videoBuffer = response.data;
+        } catch (e2) {
+          console.error("play2: ddownr failed:", e2.message);
+          const fallbackApis = [
+            `https://api.siputzx.my.id/api/d/ytmp4?url=${encodeURIComponent(url)}`,
+            `https://mahiru-shiina.vercel.app/download/ytmp4?url=${encodeURIComponent(url)}`,
+            `https://api.agungny.my.id/api/youtube-video?url=${encodeURIComponent(url)}`
+          ];
+          let success = false;
+          for (const apiUrl of fallbackApis) {
+            try {
+              videoBuffer = await downloadWithApi(apiUrl);
+              success = true;
+              break;
+            } catch (e3) {
+              console.error(`API ${apiUrl} failed:`, e3.message);
+            }
+          }
+          if (!success) throw new Error("Todos los métodos de descarga de video han fallado.");
+        }
+      }
+
+      if (!videoBuffer) throw new Error("El buffer de video está vacío.");
+
+      await sock.sendMessage(msg.key.remoteJid, { text: `✅ Descarga completada. Enviando video...` }, { edit: waitingMsg.key });
+
+      await sock.sendMessage(msg.key.remoteJid, { video: videoBuffer, mimetype: 'video/mp4', caption: title }, { quoted: msg });
+
+    } catch (error) {
+      console.error("Error final en play2:", error);
+      const errorMsg = { text: `❌ ${error.message}` };
+       if (waitingMsg) {
+        await sock.sendMessage(msg.key.remoteJid, { ...errorMsg, edit: waitingMsg.key });
+      } else {
+        await sock.sendMessage(msg.key.remoteJid, errorMsg, { quoted: msg });
+      }
     }
-
-    // Enviar video
-    await conn.sendMessage(m.chat, {
-      video: { url: videoUrl },
-      mimetype: "video/mp4",
-      fileName: `${video.title.slice(0, 30)}.mp4`.replace(/[^\w\s.-]/gi, '')
-    }, { quoted: m });
-
-    await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } });
-
-  } catch (error) {
-    console.error("Error:", error);
-    await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key } });
-
-    const errorMsg = typeof error === "string" ? error :
-      `❌ *Error:* ${error.message || "Ocurrió un problema"}\n\n` +
-      `🔸 *Posibles soluciones:*\n` +
-      `• Verifica el nombre del video\n` +
-      `• Intenta con otro video\n` +
-      `• Prueba más tarde`;
-
-    await conn.sendMessage(m.chat, { text: errorMsg }, { quoted: m });
   }
 };
 
-handler.customPrefix = /^play2?\s+/i;
-handler.command = new RegExp;
-handler.exp = 0;
-
-export default handler;
+export default play2Command;
