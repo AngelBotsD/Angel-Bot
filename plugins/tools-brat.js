@@ -35,7 +35,7 @@ const handler = async (m, { conn }) => {
   } catch (e) {
     console.error(e)
     await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key } })
-    conn.reply(m.chat, '❌ 𝙀𝙍𝙍𝙊𝙍 𝘼𝙇 𝙂𝙀𝙉𝙀𝙍𝘼𝙍 𝙀𝙇 𝙎𝙏𝙄𝘾𝙆𝙀𝙍', m)
+    conn.reply(m.chat, '❌ *la api está caída*', m)
   }
 }
 
