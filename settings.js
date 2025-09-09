@@ -17,8 +17,8 @@ global.confirmCode = ''
 global.owner = [
    ['5217227584934', 'jid', 'Angel', true],
    ['38354561278087', 'lid', 'Angel', true],
-   ['639489865908', 'jid', 'Noss', true],
-   ['33157734735917', 'lid', 'Noss', true],
+   ['5215561076182', 'jid', 'Cristisn', true],
+   ['59627769213003', 'lid', 'Criatian', true],
    ['5214662354940', 'Ex de Fer', true],
    ['584123989549', 'jid', 'Sisked', true],
    ['256237983817905', 'lid', 'Sisked', true],
