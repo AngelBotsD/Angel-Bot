@@ -76,7 +76,7 @@ handler.all = async function (m, { conn }) {
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363393959332331@newsletter',
+        newsletterJid: '',
         newsletterName: global.namechannel,
         serverMessageId: -1
       }
@@ -88,14 +88,14 @@ handler.all = async function (m, { conn }) {
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363393959332331@newsletter',
+        newsletterJid: '',
         serverMessageId: 100,
         newsletterName: global.namechannel
       },
       externalAdReply: {
         showAdAttribution: true,
-        title: global.botname || 'Sisked Bot',
-        body: global.dev || 'Sisked Dev',
+        title: global.botname || 'baki bot',
+        body: global.dev || '',
         thumbnail: global.icono,
         sourceUrl: global.redes,
         mediaType: 1,
