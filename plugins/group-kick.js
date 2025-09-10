@@ -29,7 +29,7 @@ const handler = async (m, { conn }) => {
     await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
     // solo manda la tarjeta con la imagen
     await conn.sendMessage(m.chat, {
-      text: '',
+      text: 'xd',
       contextInfo: {
         externalAdReply: {
           title: "BakiBot",
