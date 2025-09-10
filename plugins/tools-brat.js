@@ -15,22 +15,6 @@ const handler = async (m, { conn }) => {
 
     const url = `https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}`
 
-      await conn.sendMessage(m.chat, {
-    image: { url: img },
-    caption: texto,
-    contextInfo: {
-      externalAdReply: {
-        title: "𝗕𝗔𝗞𝗜 - 𝗕𝗢𝗧",
-        body: "",
-        thumbnailUrl: img,
-        sourceUrl: '',
-        mediaType: 1,
-        renderLargerThumbnail: false
-      }
-    }
-  }, { quoted: m })
-
-    // reacción ✅
     await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } })
   } catch (e) {
     console.error(e)
