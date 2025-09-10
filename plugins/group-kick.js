@@ -10,7 +10,7 @@ const handler = async (m, { conn }) => {
   const thumb = fs.existsSync(thumbPath) ? fs.readFileSync(thumbPath) : null;
 
   if (!target) {
-    const aviso = '🗡️ Menciona o responde al usuario que deseas eliminar';
+    const aviso = '*🗡️ 𝙼𝚎𝚗𝚌𝚒𝚘𝚗𝚊 𝚘 𝚛𝚎𝚜𝚙𝚘𝚗𝚍𝚎 𝙰𝚕 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚚𝚞𝚎 𝙳𝚎𝚜𝚎𝚊𝚜 𝙴𝚕𝚒𝚖𝚒𝚗𝚊𝚛*';
     await conn.sendMessage(m.chat, {
       text: aviso,
       contextInfo: {
