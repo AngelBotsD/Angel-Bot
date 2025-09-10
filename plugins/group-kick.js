@@ -7,7 +7,7 @@ const handler = async (m, { conn }) => {
 
   try {
     await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
-    return m.reply('☠️ Intruso eliminado.');
+    return m.reply('*☠️ 𝙸𝚗𝚞𝚝𝚒𝚕 𝙴𝚕𝚒𝚖𝚒𝚗𝚊𝚍𝚘*');
   } catch {
     return global.dfail('botAdmin', m, conn);
   }
