@@ -15,10 +15,10 @@ const handler = async (m, { conn }) => {
       text: aviso,
       contextInfo: {
         externalAdReply: {
-          title: "BakiBot",
-          body: "Sistema de Moderación",
+          title: "*𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃*",
+          body: "",
           thumbnail: thumb,  
-          sourceUrl: "https://instagram.com/bakibot"
+          sourceUrl: ""
         }
       }
     }, { quoted: m });
