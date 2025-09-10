@@ -15,7 +15,7 @@ const handler = async (m, { conn }) => {
       text: aviso,
       contextInfo: {
         externalAdReply: {
-          title: "*𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃*",
+          title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
           body: "",
           thumbnail: thumb,  
           sourceUrl: ""
