@@ -1,3 +1,5 @@
+import fetch from "node-fetch"
+
 const handler = async (m, { conn }) => {
   const body = m.text?.trim()
   if (!body) return
@@ -10,10 +12,13 @@ const handler = async (m, { conn }) => {
   }
 
   try {
-    // reacción ⌛
     await conn.sendMessage(m.chat, { react: { text: "⌛", key: m.key } })
 
     const url = `https://api.siputzx.my.id/api/m/brat?text=${encodeURIComponent(text)}`
+    const res = await fetch(url)
+    const buffer = await res.buffer()
+
+    await conn.sendMessage(m.chat, { sticker: buffer }, { quoted: m })
 
     await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } })
   } catch (e) {
@@ -23,7 +28,6 @@ const handler = async (m, { conn }) => {
   }
 }
 
-// igual que play: brat <texto> o .brat <texto>
 handler.customPrefix = /^(brat|.brat)\s+/i
 handler.command = new RegExp
 handler.help = ["brat <texto>"]
