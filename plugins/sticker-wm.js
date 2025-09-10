@@ -14,7 +14,7 @@ let handler = async (m, { conn, text }) => {
     console.error(e)
     if (Buffer.isBuffer(e)) stiker = e
   } finally {
-    if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m)
+    if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, rcanal)
     else return m.reply(`⭐ Responde al Sticker.`)
   }
 }
