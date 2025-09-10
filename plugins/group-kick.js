@@ -1,14 +1,25 @@
+import fs from "fs";
+
 const handler = async (m, { conn }) => {
   const target = (m.mentionedJid && m.mentionedJid.length)
     ? m.mentionedJid[0]
     : m.quoted?.sender;
 
+  // Cargar la imagen que me diste
+  const thumbPath = './src/img/catalogo.jpg';
+  const thumb = fs.existsSync(thumbPath) ? fs.readFileSync(thumbPath) : null;
+
   if (!target) {
-    const aviso = '*🗡️ 𝙼𝚎𝚗𝚌𝚒𝚘𝚗𝚊 𝚘 𝚛𝚎𝚜𝚙𝚘𝚗𝚍𝚎 𝙰𝚕 𝚞𝚜𝚞𝚊𝚛𝚒𝚘 𝚚𝚞𝚎 𝙳𝚎𝚜𝚎𝚊𝚜 𝙴𝚕𝚒𝚖𝚒𝚗𝚊𝚛*';
+    const aviso = '🗡️ Menciona o responde al usuario que deseas eliminar';
     await conn.sendMessage(m.chat, {
       text: aviso,
       contextInfo: {
-        externalAdReply: rcanal   // aquí metes tu objeto
+        externalAdReply: {
+          title: "BakiBot",
+          body: "Sistema de Moderación",
+          thumbnail: thumb,  
+          sourceUrl: "https://instagram.com/bakibot"
+        }
       }
     }, { quoted: m });
     return;
@@ -16,11 +27,16 @@ const handler = async (m, { conn }) => {
 
   try {
     await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
-    const eliminado = '*☠️ 𝙸𝚗𝚞𝚝𝚒𝚕 𝙴𝚕𝚒𝚖𝚒𝚗𝚊𝚍𝚘*';
+    // solo manda la tarjeta con la imagen
     await conn.sendMessage(m.chat, {
-      text: eliminado,
+      text: '',
       contextInfo: {
-        externalAdReply: rcanal   // igual aquí
+        externalAdReply: {
+          title: "BakiBot",
+          body: "Usuario eliminado",
+          thumbnail: thumb,
+          sourceUrl: "https://instagram.com/bakibot"
+        }
       }
     }, { quoted: m });
   } catch {
