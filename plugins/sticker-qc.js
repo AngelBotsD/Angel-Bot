@@ -58,7 +58,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const stiker = await sticker(buffer, false, '', '')
 
     if (stiker) {
-        await conn.sendFile(m.chat, stiker, 'Quotly.webp', '', m, rcanal)
+        await conn.sendFile(m.chat, stiker, 'Quotly.webp', '', m)
         await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
     }
 }
