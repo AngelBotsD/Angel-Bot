@@ -29,13 +29,13 @@ const handler = async (m, { conn }) => {
     await conn.groupParticipantsUpdate(m.chat, [target], 'remove');
     // solo manda la tarjeta con la imagen
     await conn.sendMessage(m.chat, {
-      text: 'xd',
+      text: '*🗡️ 𝚄𝚂𝚄𝙰𝚁𝙸𝙾 𝙴𝙻𝙸𝙼𝙸𝙽𝙰𝙳𝙾*',
       contextInfo: {
         externalAdReply: {
-          title: "BakiBot",
-          body: "Usuario eliminado",
+          title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
+          body: "",
           thumbnail: thumb,
-          sourceUrl: "https://instagram.com/bakibot"
+          sourceUrl: ""
         }
       }
     }, { quoted: m });
