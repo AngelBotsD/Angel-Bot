@@ -11,9 +11,9 @@ if (!fs.existsSync(tempFolder)) fs.mkdirSync(tempFolder, { recursive: true });
 const handler = async (msg, { conn }) => {
   const chatId = msg.key.remoteJid;
   const pref = global.prefixes?.[0] || ".";
+  const icono = fs.readFileSync('./src/img/catalogo.jpg'); // 🔥 aquí tu icono
 
   try {
-    // 1. Buscar media en el mensaje directo
     let quoted = null;
     let mediaType = null;
 
@@ -25,7 +25,6 @@ const handler = async (msg, { conn }) => {
       mediaType = "video";
     }
 
-    // 2. Si no hay media directa, revisar si hay quoted
     if (!quoted) {
       const q = msg.message?.extendedTextMessage?.contextInfo?.quotedMessage;
       if (q?.imageMessage) {
@@ -45,7 +44,6 @@ const handler = async (msg, { conn }) => {
 
     await conn.sendMessage(chatId, { react: { text: '🛠️', key: msg.key } });
 
-    // Descargar media
     const mediaStream = await downloadContentFromMessage(
       quoted[`${mediaType}Message`],
       mediaType
@@ -59,7 +57,17 @@ const handler = async (msg, { conn }) => {
       ? await writeExifImg(buffer, metadata)
       : await writeExifVid(buffer, metadata);
 
-    await conn.sendMessage(chatId, { sticker: { url: sticker } }, { quoted: msg });
+    await conn.sendMessage(chatId, { 
+      sticker: { url: sticker },
+      contextInfo: {
+        externalAdReply: {
+          title: "📌 Conversor a Sticker",
+          body: "🌐 BakiBot",
+          thumbnail: icono,
+          sourceUrl: "https://instagram.com/bakibot"
+        }
+      }
+    }, { quoted: msg });
 
     await conn.sendMessage(chatId, { react: { text: '✅', key: msg.key } });
 
