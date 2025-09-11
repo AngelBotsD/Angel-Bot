@@ -14,7 +14,7 @@ const handler = async (m, { conn, participants }) => {
   const users = participants.map(u => conn.decodeJid(u.id))
 
   // 🟢 Miniatura personalizada
-  const imgSelected = "https://cdn.russellxz.click/c3cf443a.jpeg"
+  const imgSelected = "./src/img/catalogo.jpg"
   const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
 
   // 🟢 Fake estilo Business (solo como tu captura, sin externalAdReply)
