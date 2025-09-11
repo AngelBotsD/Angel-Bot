@@ -245,7 +245,7 @@ let handler = async (m, { isPrems, conn }) => {
     caption: texto,
     contextInfo: {
       externalAdReply: {
-        title: "𝗕𝗔𝗞𝗜 - 𝗕𝗢𝗧",
+        title: "./src/img/catalogo.jpg",
         body: "",
         thumbnailUrl: img,
         sourceUrl: '',
