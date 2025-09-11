@@ -1,5 +1,5 @@
+import fs from 'fs'
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
-import axios from 'axios'
 
 const handler = async (m, { conn, participants }) => {
   if (!m.isGroup || m.key.fromMe) return
@@ -13,11 +13,9 @@ const handler = async (m, { conn, participants }) => {
   const finalText = userText || '📢 Notificación'
   const users = participants.map(u => conn.decodeJid(u.id))
 
-  // 🟢 Miniatura personalizada
-  const imgSelected = "https://cdn.russellxz.click/c3cf443a.jpeg"
-  const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
+  const imgPath = './src/img/catalogo.jpg'
+  const thumb = fs.readFileSync(imgPath)
 
-  // 🟢 Fake estilo Business (solo como tu captura, sin externalAdReply)
   const fkontak = {
     key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo" },
     message: {
@@ -48,9 +46,7 @@ const handler = async (m, { conn, participants }) => {
       if (mtype === 'audioMessage') {
         try {
           const media = await q.download()
-          await conn.sendMessage(m.chat, { 
-            audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users 
-          }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users }, { quoted: fkontak })
           if (finalText) {
             await conn.sendMessage(m.chat, { text: finalText, mentions: users }, { quoted: fkontak })
           }
@@ -84,9 +80,7 @@ const handler = async (m, { conn, participants }) => {
       if (mtype === 'audioMessage') {
         try {
           const media = await m.download()
-          await conn.sendMessage(m.chat, { 
-            audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users 
-          }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users }, { quoted: fkontak })
           if (finalText) {
             await conn.sendMessage(m.chat, { text: finalText, mentions: users }, { quoted: fkontak })
           }
