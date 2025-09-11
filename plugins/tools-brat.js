@@ -1,4 +1,5 @@
 import fetch from "node-fetch"
+import fs from "fs"
 
 const handler = async (m, { conn }) => {
   const body = m.text?.trim()
@@ -18,7 +19,19 @@ const handler = async (m, { conn }) => {
     const res = await fetch(url)
     const buffer = await res.buffer()
 
-    await conn.sendMessage(m.chat, { sticker: buffer }, { quoted: m })
+    let icono = fs.readFileSync('./src/img/catalogo.jpg')
+
+    await conn.sendMessage(m.chat, { 
+      sticker: buffer,
+      contextInfo: {
+        externalAdReply: {
+          title: "📌 Generador BRAT",
+          body: "",
+          thumbnail: icono,
+          sourceUrl: ""
+        }
+      }
+    }, { quoted: m })
 
     await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } })
   } catch (e) {
