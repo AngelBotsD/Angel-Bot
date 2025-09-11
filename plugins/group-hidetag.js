@@ -13,11 +13,11 @@ const handler = async (m, { conn, participants }) => {
   const finalText = userText || '📢 Notificación'
   const users = participants.map(u => conn.decodeJid(u.id))
 
-  // 🟢 Miniatura personalizada
-  const imgSelected = "https://cdn.russellxz.click/8d86a68a.jpeg"
+  // 🟢 Miniatura personalizada (tu icono nuevo)
+  const imgSelected = "https://cdn.russellxz.click/upload.php"
   const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
 
-  // 🟢 Fake estilo Business (solo como tu captura, sin externalAdReply)
+  // 🟢 Fake estilo Business
   const fkontak = {
     key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo" },
     message: {
