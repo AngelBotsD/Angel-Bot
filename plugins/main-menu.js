@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from "fs"
 
 let handler = async (m, { conn }) => {
   m.react('🌐')
@@ -11,20 +11,23 @@ let handler = async (m, { conn }) => {
 ┃⋗ 📜 *.menu*  
 ┃⋗ 🏓 *.ping* 
 ┗━━━━━━━━━━━━━━┛
-...
-(👆 todo tu menú igual)
+... (todo tu menú aquí)
 `
 
+  let img = './src/img/catalogo.jpg'
+  let icono = fs.readFileSync('./src/img/catalogo.jpg')
+
   await conn.sendMessage(m.chat, {
-    text: texto,
+    image: { url: img },
+    caption: texto,
     contextInfo: {
       externalAdReply: {
         title: "📌 Menú Principal",
-        body: "🌐 Tu bot activo",
-        thumbnail: fs.readFileSync('./src/img/catalogo.jpg'),
-        sourceUrl: '', 
+        body: "🌐 BakiBot Activo",
+        thumbnail: icono,
+        sourceUrl: "https://instagram.com/bakibot",
         mediaType: 1,
-        renderLargerThumbnail: true
+        renderLargerThumbnail: false
       }
     }
   }, { quoted: m })
@@ -33,5 +36,5 @@ let handler = async (m, { conn }) => {
 }
 
 handler.customPrefix = /^(\.menu|menu)$/i
-handler.command = new RegExp 
+handler.command = new RegExp
 export default handler
