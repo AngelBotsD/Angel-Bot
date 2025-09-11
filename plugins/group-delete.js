@@ -7,10 +7,10 @@ let handler = async (m, { conn }) => {
 
   if (!m.quoted) {
     return conn.sendMessage(m.chat, {
-      text: `☁️ Responde al mensaje que deseas eliminar.`,
+      text: `*𝚁𝚎𝚜𝚙𝚘𝚗𝚍𝚎 𝙰𝚕 𝙼𝚎𝚗𝚜𝚊𝚓𝚎 𝚚𝚞𝚎 𝚍𝚎𝚜𝚎𝚊𝚜 𝙴𝚕𝚒𝚖𝚒𝚗𝚊𝚛*`,
       contextInfo: {
         externalAdReply: {
-          title: "BakiBot",
+          title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
           body: "",
           thumbnail: thumb,
           sourceUrl: ""
@@ -40,13 +40,13 @@ let handler = async (m, { conn }) => {
       await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } });
     } catch {
       return conn.sendMessage(m.chat, {
-        text: '☁️ No se pudo eliminar el mensaje.',
+        text: '*𝙳𝚎𝚜𝚊𝚏𝚘𝚛𝚝𝚞𝚗𝚊𝚍𝚊𝚖𝚎𝚗𝚝𝚎 𝙽𝚘 𝚜𝚎 𝚙𝚞𝚎𝚍𝚘 𝙴𝚕𝚒𝚖𝚒𝚗𝚊𝚛 𝙴𝚕 𝙼𝚎𝚗𝚜𝚊𝚓𝚎*',
         contextInfo: {
           externalAdReply: {
-            title: "BakiBot",
-            body: "Sistema de Moderación",
+            title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
+            body: "",
             thumbnail: thumb,
-            sourceUrl: "https://instagram.com/bakibot"
+            sourceUrl: ""
           }
         }
       }, { quoted: m });
