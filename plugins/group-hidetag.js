@@ -17,7 +17,7 @@ const handler = async (m, { conn, participants }) => {
   const imgSelected = "https://cdn.russellxz.click/c3cf443a.jpeg"
   const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
 
-  // 🟢 Fake estilo Business + icono externalAdReply
+  // 🟢 Fake estilo Business (solo como tu captura, sin externalAdReply)
   const fkontak = {
     key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo" },
     message: {
@@ -44,40 +44,27 @@ const handler = async (m, { conn, participants }) => {
     const originalCaption = (q.msg?.caption || q.text || '').trim()
     const finalCaption = finalText || originalCaption || '📢 Notificación'
 
-    const ext = {
-      contextInfo: {
-        externalAdReply: {
-          title: "𝐏𝐎𝐋𝐕𝐎𝐑𝐀 𝐁𝐎𝐓 🔥",
-          body: "𝐏𝐎𝐋𝐕𝐎𝐑𝐀 𝐁𝐎𝐓 🔥",
-          thumbnailUrl: imgSelected,
-          sourceUrl: '',
-          renderLargerThumbnail: true
-        },
-        mentionedJid: users
-      }
-    }
-
     if (m.quoted && isMedia) {
       if (mtype === 'audioMessage') {
         try {
           const media = await q.download()
           await conn.sendMessage(m.chat, { 
-            audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users, ...ext 
+            audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users 
           }, { quoted: fkontak })
           if (finalText) {
-            await conn.sendMessage(m.chat, { text: finalText, mentions: users, ...ext }, { quoted: fkontak })
+            await conn.sendMessage(m.chat, { text: finalText, mentions: users }, { quoted: fkontak })
           }
         } catch {
-          await conn.sendMessage(m.chat, { text: finalCaption, mentions: users, ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { text: finalCaption, mentions: users }, { quoted: fkontak })
         }
       } else {
         const media = await q.download()
         if (mtype === 'imageMessage') {
-          await conn.sendMessage(m.chat, { image: media, caption: finalCaption, mentions: users, ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { image: media, caption: finalCaption, mentions: users }, { quoted: fkontak })
         } else if (mtype === 'videoMessage') {
-          await conn.sendMessage(m.chat, { video: media, caption: finalCaption, mentions: users, mimetype: 'video/mp4', ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { video: media, caption: finalCaption, mentions: users, mimetype: 'video/mp4' }, { quoted: fkontak })
         } else if (mtype === 'stickerMessage') {
-          await conn.sendMessage(m.chat, { sticker: media, mentions: users, ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { sticker: media, mentions: users }, { quoted: fkontak })
         }
       }
     } else if (m.quoted && !isMedia) {
@@ -92,33 +79,32 @@ const handler = async (m, { conn, participants }) => {
         conn.user.jid,
         { mentions: users }
       )
-      msg.message[mtype || 'extendedTextMessage'].contextInfo = ext.contextInfo
       await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
     } else if (!m.quoted && isMedia) {
       if (mtype === 'audioMessage') {
         try {
           const media = await m.download()
           await conn.sendMessage(m.chat, { 
-            audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users, ...ext 
+            audio: media, mimetype: 'audio/ogg; codecs=opus', ptt: true, mentions: users 
           }, { quoted: fkontak })
           if (finalText) {
-            await conn.sendMessage(m.chat, { text: finalText, mentions: users, ...ext }, { quoted: fkontak })
+            await conn.sendMessage(m.chat, { text: finalText, mentions: users }, { quoted: fkontak })
           }
         } catch {
-          await conn.sendMessage(m.chat, { text: finalCaption, mentions: users, ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { text: finalCaption, mentions: users }, { quoted: fkontak })
         }
       } else {
         const media = await m.download()
         if (mtype === 'imageMessage') {
-          await conn.sendMessage(m.chat, { image: media, caption: finalCaption, mentions: users, ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { image: media, caption: finalCaption, mentions: users }, { quoted: fkontak })
         } else if (mtype === 'videoMessage') {
-          await conn.sendMessage(m.chat, { video: media, caption: finalCaption, mentions: users, mimetype: 'video/mp4', ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { video: media, caption: finalCaption, mentions: users, mimetype: 'video/mp4' }, { quoted: fkontak })
         } else if (mtype === 'stickerMessage') {
-          await conn.sendMessage(m.chat, { sticker: media, mentions: users, ...ext }, { quoted: fkontak })
+          await conn.sendMessage(m.chat, { sticker: media, mentions: users }, { quoted: fkontak })
         }
       }
     } else {
-      await conn.sendMessage(m.chat, { text: finalCaption, mentions: users, ...ext }, { quoted: fkontak })
+      await conn.sendMessage(m.chat, { text: finalCaption, mentions: users }, { quoted: fkontak })
     }
   } catch (e) {
     await conn.sendMessage(m.chat, { text: '📢 Notificación', mentions: users }, { quoted: fkontak })
