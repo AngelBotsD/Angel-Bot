@@ -25,7 +25,7 @@ const handler = async (m, { conn }) => {
       sticker: buffer,
       contextInfo: {
         externalAdReply: {
-          title: "📌 Generador BRAT",
+          title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
           body: "",
           thumbnail: icono,
           sourceUrl: ""
