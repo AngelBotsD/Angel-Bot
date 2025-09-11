@@ -21,10 +21,10 @@ let handler = async (m, { conn, text }) => {
       await conn.sendFile(m.chat, stiker, 'wm.webp', '', m, false, {
         contextInfo: {
           externalAdReply: {
-            title: "📌 Sticker Editado",
-            body: "🌐 BakiBot",
+            title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
+            body: "",
             thumbnail: icono,
-            sourceUrl: "https://instagram.com/bakibot"
+            sourceUrl: ""
           }
         }
       })
