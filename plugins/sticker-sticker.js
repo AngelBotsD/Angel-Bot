@@ -11,7 +11,7 @@ if (!fs.existsSync(tempFolder)) fs.mkdirSync(tempFolder, { recursive: true });
 const handler = async (msg, { conn }) => {
   const chatId = msg.key.remoteJid;
   const pref = global.prefixes?.[0] || ".";
-  const icono = fs.readFileSync('./src/img/catalogo.jpg'); // 🔥 aquí tu icono
+  const icono = fs.readFileSync('./src/img/catalogo.jpg');
 
   try {
     let quoted = null;
@@ -61,10 +61,10 @@ const handler = async (msg, { conn }) => {
       sticker: { url: sticker },
       contextInfo: {
         externalAdReply: {
-          title: "📌 Conversor a Sticker",
-          body: "🌐 BakiBot",
+          title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
+          body: "",
           thumbnail: icono,
-          sourceUrl: "https://instagram.com/bakibot"
+          sourceUrl: ""
         }
       }
     }, { quoted: msg });
