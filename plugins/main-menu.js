@@ -250,7 +250,7 @@ let handler = async (m, { conn }) => {
     caption: texto,
     contextInfo: {
       externalAdReply: {
-        title: "📌 Menú Principal",
+        title: "𝙱𝙰𝙺𝙸 - 𝙱𝙾𝚃",
         body: "",
         thumbnail: icono,
         sourceUrl: "",
