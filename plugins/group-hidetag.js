@@ -14,7 +14,7 @@ const handler = async (m, { conn, participants }) => {
   const users = participants.map(u => conn.decodeJid(u.id))
 
   // 🟢 Miniatura personalizada (tu icono nuevo)
-  const imgSelected = "https://files.catbox.moe/jfov52.php"
+  const imgSelected = "https://files.catbox.moe/jfov52.jpg"
   const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
 
   // 🟢 Fake estilo Business
