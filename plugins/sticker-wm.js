@@ -1,4 +1,6 @@
 import { addExif } from '../lib/sticker.js'
+import fs from "fs"
+
 let handler = async (m, { conn, text }) => {
   if (!m.quoted) return m.reply(`⭐ Responde al Sticker.`)
   let stiker = false
@@ -14,10 +16,24 @@ let handler = async (m, { conn, text }) => {
     console.error(e)
     if (Buffer.isBuffer(e)) stiker = e
   } finally {
-    if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m)
-    else return m.reply(`⭐ Responde al Sticker.`)
+    if (stiker) {
+      let icono = fs.readFileSync('./src/img/catalogo.jpg')
+      await conn.sendFile(m.chat, stiker, 'wm.webp', '', m, false, {
+        contextInfo: {
+          externalAdReply: {
+            title: "📌 Sticker Editado",
+            body: "🌐 BakiBot",
+            thumbnail: icono,
+            sourceUrl: "https://instagram.com/bakibot"
+          }
+        }
+      })
+    } else {
+      return m.reply(`⭐ Responde al Sticker.`)
+    }
   }
 }
+
 handler.help = ['wm <nombre>|<autor>']
 handler.tags = ['sticker']
 handler.command = ['take', 'robar', 'wm'] 
