@@ -1,28 +1,23 @@
-// ruletaban.js
 let handler = async (m, { conn, participants, isBotAdmin }) => {
   if (!m.isGroup) return conn.reply(m.chat, 'Este comando solo funciona en grupos.', m);
   if (!isBotAdmin) return conn.reply(m.chat, 'Necesito ser administrador para sacar a alguien.', m);
 
-  // ID del bot
-  let botId = conn.user.jid;
+  let botId = conn.user.jid.split(':')[0];
 
-  // candidatos (todos menos bot y owners/superadmins)
   let candidates = participants
-    .filter(p => p.id !== botId && p.admin !== 'superadmin') // excluye bot + dueños
+    .filter(p => {
+      let id = p.id.split(':')[0];
+      return id !== botId && p.admin !== 'superadmin';
+    })
     .map(p => p.id);
 
   if (!candidates.length) return conn.reply(m.chat, 'No hay candidatos válidos para elegir.', m);
 
-  // elegir uno random
   let chosen = candidates[Math.floor(Math.random() * candidates.length)];
-
-  // mensaje
   let text = `Adiós putita, fuiste elegido @${chosen.split('@')[0]}`;
 
-  // enviar texto con mención
   await conn.sendMessage(m.chat, { text, mentions: [chosen] }, { quoted: m });
 
-  // expulsar
   try {
     await conn.groupParticipantsUpdate(m.chat, [chosen], 'remove');
   } catch (e) {
