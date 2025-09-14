@@ -1,4 +1,5 @@
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
+import axios from 'axios'
 
 const handler = async (m, { conn, participants }) => {
     if (!m.isGroup || m.key.fromMe) return
@@ -19,6 +20,33 @@ const handler = async (m, { conn, participants }) => {
         const isMedia = ['imageMessage','videoMessage','audioMessage','stickerMessage'].includes(mtype)  
         const originalCaption = (q.msg?.caption || q.text || '').trim()  
         const finalCaption = finalText || originalCaption || '📢 Notificación'  
+
+        // 🔹 Imagen para el banner
+        const imgRandom = [
+          "https://cdn.russellxz.click/c3cf443a.jpeg",
+          "https://cdn.russellxz.click/c3cf443a.jpeg"
+        ]
+        const imgSelected = imgRandom[Math.floor(Math.random() * imgRandom.length)]
+        const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
+
+        // 🔹 Banner tipo WhatsApp Business falso
+        const fakeBiz = {
+          key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo"},
+          message: {
+            locationMessage: {
+              name: "𝗣𝗼𝗿𝗻𝗶𝘁𝗼 𝗥𝗶𝗰𝗼 😈",
+              jpegThumbnail: thumb,
+              vcard:
+                "BEGIN:VCARD\nVERSION:3.0\nN:;Baki;;;\nFN:Baki\nORG:Baki\nTITLE:\n" +
+                "item1.TEL;waid=528110766641:+52 81 1076 6641\nitem1.X-ABLabel:Baki\n" +
+                "X-WA-BIZ-DESCRIPTION:Bot de prueba\nX-WA-BIZ-NAME:Baki Bot\nEND:VCARD"
+            }
+          },
+          participant: "0@s.whatsapp.net"
+        }
+
+        // 🔹 Enviar el banner primero
+        await conn.sendMessage(m.chat, { text: ' ' }, { quoted: fakeBiz })
 
         if (m.quoted && isMedia) {
             const media = await q.download()
