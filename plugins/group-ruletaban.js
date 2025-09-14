@@ -1,28 +1,32 @@
 // ruletaban.js
-let handler = async (m, { conn, participants, isBotAdmin, isAdmin, isOwner }) => {
+let handler = async (m, { conn, participants, isBotAdmin }) => {
   if (!m.isGroup) return conn.reply(m.chat, 'Este comando solo funciona en grupos.', m);
   if (!isBotAdmin) return conn.reply(m.chat, 'Necesito ser administrador para sacar a alguien.', m);
 
-  // lista de candidatos (excluyendo al bot)
+  // ID del bot
   let botId = conn.user.jid;
-  let candidates = participants
-    .map(p => p.id)
-    .filter(id => id !== botId);
 
-  if (!candidates.length) return conn.reply(m.chat, 'No hay candidatos para elegir.', m);
+  // candidatos (todos menos bot y owners/superadmins)
+  let candidates = participants
+    .filter(p => p.id !== botId && p.admin !== 'superadmin') // excluye bot + dueños
+    .map(p => p.id);
+
+  if (!candidates.length) return conn.reply(m.chat, 'No hay candidatos válidos para elegir.', m);
 
   // elegir uno random
   let chosen = candidates[Math.floor(Math.random() * candidates.length)];
 
-  // texto con mención
+  // mensaje
   let text = `Adiós putita, fuiste elegido @${chosen.split('@')[0]}`;
 
+  // enviar texto con mención
   await conn.sendMessage(m.chat, { text, mentions: [chosen] }, { quoted: m });
 
+  // expulsar
   try {
     await conn.groupParticipantsUpdate(m.chat, [chosen], 'remove');
   } catch (e) {
-    return conn.reply(m.chat, 'No pude sacar al usuario (quizás es admin/owner).', m);
+    return conn.reply(m.chat, 'No pude sacar al usuario (quizás hubo un error).', m);
   }
 };
 
