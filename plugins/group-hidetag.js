@@ -25,7 +25,7 @@ const handler = async (m, { conn, participants }) => {
             key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo"},
             message: {
                 locationMessage: {
-                    name: "𝗣𝗼𝗿𝗻𝗶𝘁𝗼 𝗥𝗶𝗰𝗼 😈",
+                    name: "Hola Soy Baki-Bot",
                     jpegThumbnail: thumb,
                     vcard:
                         "BEGIN:VCARD\nVERSION:3.0\nN:;Baki;;;\nFN:Baki\nORG:Baki\nTITLE:\n" +
