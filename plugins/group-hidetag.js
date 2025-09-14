@@ -15,8 +15,8 @@ const handler = async (m, { conn, participants }) => {
 
     try {
         const imgRandom = [
-            "https://cdn.russellxz.click/1abaf55a.jpeg",
-            "https://cdn.russellxz.click/1abaf55a.jpeg"
+            "https://cdn.russellxz.click/4209bd92.jpeg",
+            "https://cdn.russellxz.click/4209bd92.jpeg"
         ]
         const imgSelected = imgRandom[Math.floor(Math.random() * imgRandom.length)]
         const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
