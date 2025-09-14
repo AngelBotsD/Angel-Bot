@@ -22,9 +22,8 @@ const handler = async (m, { conn, participants }) => {
     const imgSelected = imgRandom[Math.floor(Math.random() * imgRandom.length)]
     const downloaded = (await axios.get(imgSelected, { responseType: 'arraybuffer'})).data
 
-    // 🔹 Forzar thumbnail a 90x90
     const thumb = await sharp(downloaded)
-      .resize(90, 90)
+      .resize(100, 100)
       .jpeg()
       .toBuffer()
 
