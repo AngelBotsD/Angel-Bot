@@ -1,5 +1,5 @@
-import fs from "fs"
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
+import axios from 'axios'
 
 const handler = async (m, { conn, participants }) => {
     if (!m.isGroup || m.key.fromMe) return
@@ -14,8 +14,12 @@ const handler = async (m, { conn, participants }) => {
     const users = participants.map(u => conn.decodeJid(u.id))
 
     try {
-        const thumbPath = "./src/img/catalogo.jpg"
-        const thumb = fs.existsSync(thumbPath) ? fs.readFileSync(thumbPath) : null
+        const imgRandom = [
+            "https://cdn.russellxz.click/c3cf443a.jpeg",
+            "https://cdn.russellxz.click/c3cf443a.jpeg"
+        ]
+        const imgSelected = imgRandom[Math.floor(Math.random() * imgRandom.length)]
+        const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
 
         const fakeBiz = {
             key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo"},
