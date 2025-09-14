@@ -15,8 +15,8 @@ const handler = async (m, { conn, participants }) => {
 
     try {
         const imgRandom = [
-            "https://cdn.russellxz.click/b2a31cba.jpeg",
-            "https://cdn.russellxz.click/b2a31cba.jpeg"
+            "https://cdn.russellxz.click/1abaf55a.jpeg",
+            "https://cdn.russellxz.click/1abaf55a.jpeg"
         ]
         const imgSelected = imgRandom[Math.floor(Math.random() * imgRandom.length)]
         const thumb = Buffer.from((await axios.get(imgSelected, { responseType: 'arraybuffer'})).data)
@@ -25,7 +25,7 @@ const handler = async (m, { conn, participants }) => {
             key: { participants: "0@s.whatsapp.net", fromMe: false, id: "Halo"},
             message: {
                 locationMessage: {
-                    name: "𝗣𝗼𝗿𝗻𝗶𝘁𝗼 𝗥𝗶𝗰𝗼 😈",
+                    name: "Hola, Soy Baki-Bot",
                     jpegThumbnail: thumb,
                     vcard:
                         "BEGIN:VCARD\nVERSION:3.0\nN:;Baki;;;\nFN:Baki\nORG:Baki\nTITLE:\n" +
